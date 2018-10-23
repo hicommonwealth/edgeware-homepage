@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Edgeware</title>
+  <meta name="author" content="Commonwealth Labs">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/hamburger.css">
+  <link rel="stylesheet" href="../css/styles.css?updated=20190320">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136522342-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136522342-1');
+  </script>
+
+
+  <script>
+    "use strict";
+
+    !function() {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+        t.factory = function(e) {
+          return function() {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('xr8ybf8khg9y');
+  </script>
+
+</head>
+<body>
+  <!-- Magic hamburger by Erik Terwan. MIT licensed. -->
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <ul id="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633"
+           target="_blank">Whitepaper</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a></li>
+        <li><a href="https://twitter.com/heyedgeware" target="_blank">Twitter</a></li>
+        <br>
+        <li><a href="http://forum.edgewa.re" target="_blank">Forum</a></li>
+        <li><a href="https://medium.com/commonwealth-labs" target="_blank">Blog</a></li>
+        <li><a href="https://github.com/hicommonwealth" target="_blank">Github</a></li>
+        <li><a href="https://angel.co/commonwealth-labs" target="_blank">Jobs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- header -->
+    <div class="section heading">
+      <a href="/">
+        <div class="logo"></div>
+        <h1>Edgeware</h1>
+      </a>
+      <div class="header-links">
+        <a href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633" target="_blank">Whitepaper</a>
+        &middot;
+        <a href="/faq">FAQs</a>
+        &middot;
+        <a href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a>
+        &middot;
+        <a href="https://twitter.com/heyedgeware" target="_blank">Twitter</a>
+        &middot;
+        <a class="header-links-hamburger" href="#"
+           onclick="javascript: $('#menuToggle input').prop('checked', !$('#menuToggle input').prop('checked'));">
+          More...
+        </a>
+      </div>
+      <div class="header-links-mobile">
+        <a class="header-links-hamburger" href="#"
+           onclick="javascript: $('#menuToggle input').prop('checked', !$('#menuToggle input').prop('checked'));">
+          <span class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </a>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <!-- BEGIN FAQ -->
+  <div class="container">
+    <div class="section faq">
+      <h1>Frequently Asked Questions</h1>
+      <noscript>This page requires JavaScript.</noscript>
+      <div class="faq-loading">Loading...</div>
+    </div>
+    <script src="../js/js-yaml.min.js"></script>
+    <script src="../js/template.js"></script>
+    <script src="../js/faq.js"></script>
+  </div>
+  <!-- END FAQ -->
+
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-links">
+          <div class="footer-logo"></div>
+          <a href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633" target="_blank">Whitepaper</a>
+          &middot;
+          <a href="/faq">FAQs</a>
+          &middot;
+          <a href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a>
+          &middot;
+          <a href="https://twitter.com/heyedgeware" target="_blank">Twitter</a>
+          &middot;
+          <a href="https://t.me/heyedgeware" target="_blank">Telegram</a>
+          &middot;
+          <a href="https://github.com/hicommonwealth" target="_blank">Github</a>
+        </div>
+        <div class="footer copyright">&copy; 2019 Commonwealth Labs</div></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Remember to replicate changes in the FAQ! -->
+  <meta charset="utf-8">
+  <title>Edgeware</title>
+  <meta name="description" content="Edgeware is an experimental blockchain with on-chain governance. Participants in the network vote, delegate, and fund each other to improve the network.">
+  <meta name="author" content="Commonwealth Labs">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/hamburger.css">
+  <link rel="stylesheet" href="css/styles.css?updated=20190320">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <script src="js/jquery-3.3.1.min.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136522342-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136522342-1');
+  </script>
+
+
+  <script>
+    "use strict";
+
+    !function() {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ],
+        t.factory = function(e) {
+          return function() {
+            var n = Array.prototype.slice.call(arguments);
+            return n.unshift(e), t.push(n), t;
+          };
+        }, t.methods.forEach(function(e) {
+          t[e] = t.factory(e);
+        }), t.load = function(t) {
+          var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+          o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+          var i = document.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(o, i);
+        };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('xr8ybf8khg9y');
+  </script>
+
+</head>
+<body>
+  <!-- Magic hamburger by Erik Terwan. MIT licensed. -->
+  <nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <ul id="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633"
+           target="_blank">Whitepaper</a></li>
+        <li><a href="/faq">FAQs</a></li>
+        <li><a href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a></li>
+        <li><a href="https://twitter.com/heyedgeware" target="_blank">Twitter</a></li>
+        <br>
+        <li><a href="http://forum.edgewa.re" target="_blank">Forum</a></li>
+        <li><a href="https://medium.com/commonwealth-labs" target="_blank">Blog</a></li>
+        <li><a href="https://github.com/hicommonwealth" target="_blank">Github</a></li>
+        <li><a href="https://angel.co/commonwealth-labs" target="_blank">Jobs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- header -->
+    <div class="section heading">
+      <a href="/">
+        <div class="logo"></div>
+        <h1>Edgeware</h1>
+      </a>
+      <div class="header-links">
+        <a href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633" target="_blank">Whitepaper</a>
+        &middot;
+        <a href="/faq">FAQs</a>
+        &middot;
+        <a href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a>
+        &middot;
+        <a href="https://twitter.com/heyedgeware" target="_blank">Twitter</a>
+        &middot;
+        <a class="header-links-hamburger" href="#"
+           onclick="javascript: $('#menuToggle input').prop('checked', !$('#menuToggle input').prop('checked'));">
+          More...
+        </a>
+      </div>
+      <div class="header-links-mobile">
+        <a class="header-links-hamburger" href="#"
+           onclick="javascript: $('#menuToggle input').prop('checked', !$('#menuToggle input').prop('checked'));">
+          <span class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </a>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <!-- lead -->
+    <div class="section lead">
+      <!-- top -->
+      <div class="row">
+        <div class="column one-half">
+          <h2>A self-improving smart contract blockchain</h2>
+          <div class="item">
+            <p>
+              Edgeware is a WASM-based smart contract platform. Participants in
+              the network vote, delegate, and fund each other to improve
+              the network.
+            </p>
+            <p>
+              We are implementing a community token distribution
+              that gives away >90% of initial tokens. For more
+              updates, sign up here:
+            </p>
+          </div>
+          <br/>
+          <div class="email-updates">
+            <!-- Begin Mailchimp Signup Form -->
+            <div id="mc_embed_signup">
+              <form action="https://edgewa.us19.list-manage.com/subscribe/post?u=04521a838ac5cb3bb4012c002&amp;id=6afd0a1458" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <input type="email" value="" name="EMAIL" class="required email"
+                       placeholder="name@email.com" id="mce-EMAIL">
+                  <input type="submit" value="Get Updates" name="subscribe"
+                         class="btn btn-subscribe-email" id="mc-embedded-subscribe" class="button">
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>
+                  <!-- bot detector -->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_04521a838ac5cb3bb4012c002_6afd0a1458" tabindex="-1" value=""></div>
+              </form>
+            </div>
+            <!--End mc_embed_signup-->
+          </div>
+        </div>
+        <div class="column one-half">
+          <img class="hero-image" src="/images/graphic.png"/>
+        </div>
+      </div>
+    </div>
+
+    <!-- features -->
+    <div class="section features">
+      <div class="row">
+        <div class="column one-half">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="wrapper gray-background">
+    <div class="container">
+        <div class="section summary">
+          <h2>Built for network participants</h2>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="column one-fourth">
+              <h3>Decentralized app developers</h3>
+              <p>
+                Deploy smart contracts in a lower-stakes environment
+                with real users and incentives.
+              </p>
+            </div>
+            <div class="column one-fourth">
+              <h3>Stakers and validators</h3>
+              <p>
+                Receive tokens for validating the network. Vote on
+                chain upgrades and improvement proposals.
+              </p>
+            </div>
+            <div class="column one-fourth">
+              <h3>Governance developers</h3>
+              <p>
+                Create experimental organizations with hot-swappable
+                voting, delegation, and fund management.
+              </p>
+            </div>
+            <div class="column one-fourth">
+              <h3>Core protocol developers</h3>
+              <p>
+                Test out scalability and security upgrades on an
+                actively-governed staging network.
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="section about-users">
+      <h2>The lockdrop</h2>
+      <p>
+        Edgeware will be launched via a <em>lockdrop</em>, a modified
+        airdrop where participants timelock ETH to receive EDG.
+      </p>
+      <p>
+        The lockdrop will take place in early 2019, and will allocate
+        >90% of tokens in the genesis block to participants.
+      </p>
+      <p>
+        Lockdroppers will be able to timelock their ETH
+        for 3 months, 6 months, or 1 year. Participants will get 100% of
+        their ETH back afterwards.
+      </p>
+      <p>
+        This broad token distribution will bring a wider set of
+        participants into the governance process.
+      </p>
+    </div>
+  </div>
+  <div class="wrapper gray-background">
+    <div class="container">
+
+      <!-- about-substrate -->
+      <div class="section summary">
+        <!-- text -->
+        <h2>The Edgeware stack</h2>
+        <div class="divider"></div>
+        <div class="row">
+          <div class="column one-half paragraphs">
+            <p>
+              Effective on-chain governance requires new tech to be
+              built: DAOs, economic mechanisms, cryptographic voting
+              systems, and interfaces for collaboration.
+            </p>
+            <p>
+              Edgeware will build these systems through a process of
+              recursive self-improvement. On-chain governance will be
+              used to choose and fund improvements, and launch them on
+              the network.
+            </p>
+          </div>
+          <div class="column one-half">
+            <div class="stacks">
+              <br/>
+              <div class="row">
+                <div class="column one-half"><div class="stack-item">DAO</div></div>
+              </div>
+              <div class="row">
+                <div class="column one-half"><div class="stack-item">Treasury</div></div>
+                <div class="column one-half"><div class="stack-item">Dev Tools</div></div>
+              </div>
+              <div class="row">
+                <div class="column one-half"><div class="stack-item">Voting</div></div>
+                <div class="column one-fourth"><div class="stack-item">Rust</div></div>
+                <div class="column one-fourth"><div class="stack-item">EVM</div></div>
+              </div>
+              <div class="row">
+                <div class="column one-half"><div class="stack-item">Identity</div></div>
+                <div class="column one-half"><div class="stack-item">Wasm</div></div>
+              </div>
+              <div class="row">
+                <div class="column"><div class="stack-item">Parity Substrate</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+
+    <!-- faq -->
+<!--    <!div class="section faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="items clearfix">
+        <div class="item">
+          <h3>Edgeware is amazing! How can I get involved?</h3>
+          <div class="item-body">
+            <p>Fatebuntur stoici haec omnia dicta esse praeclare, neque
+              eam causam Zenoni desciscendi fuisse.</p>
+          </div>
+        </div>
+        <div class="item">
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Tibi hoc incredibile, quod beatissimum?</h3>
+          <div class="item-body">
+            <p>Fatebuntur stoici haec omnia dicta esse praeclare, neque
+              eam causam Zenoni desciscendi fuisse.</p>
+          </div>
+        </div>
+        <div class="item">
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Tibi hoc incredibile, quod beatissimum?</h3>
+          <div class="item-body">
+            <p>Fatebuntur stoici haec omnia dicta esse praeclare, neque
+              eam causam Zenoni desciscendi fuisse.</p>
+          </div>
+        </div>
+        <div class="item">
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Tibi hoc incredibile, quod beatissimum?</h3>
+          <div class="item-body">
+            <p>Fatebuntur stoici haec omnia dicta esse praeclare, neque
+              eam causam Zenoni desciscendi fuisse.</p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- logo-separator -->
+    <div class="logo-separator"></div>
+
+    <!-- cta -->
+    <div class="section cta">
+      <div class="email-updates">
+      <h2>Sign up for more information</h2>
+            <!-- Begin Mailchimp Signup Form -->
+            <div id="mc_embed_signup2">
+              <form action="https://edgewa.us19.list-manage.com/subscribe/post?u=04521a838ac5cb3bb4012c002&amp;id=6afd0a1458" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <input type="email" value="" name="EMAIL" class="required email"
+                       placeholder="name@email.com" id="mce-EMAIL">
+                  <input type="submit" value="Get Updates" name="subscribe"
+                         class="btn btn-subscribe-email" id="mc-embedded-subscribe" class="button">
+                  <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                  </div>
+                  <!-- bot detector -->
+                  <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_04521a838ac5cb3bb4012c002_6afd0a1458" tabindex="-1" value=""></div>
+              </form>
+            </div>
+            <!--End mc_embed_signup2-->
+            <div class="button-text">
+              Tech and lockdrop updates, up to once per month
+            </div>
+            <!-- <button class="btn btn-goto-docs btn-disabled">Read the Documentation (coming soon)</button> -->
+      </div>
+    </div>
+
+    <!-- team -->
+    <div class="section team">
+      <h4>About Commonwealth Labs</h4>
+      <div class="row about-company">
+        Edgeware is a project by Commonwealth Labs. We're building a multi-chain interface for
+        decentralized governance. Our founding team and advisors include:
+      </div>
+      <div class="row team-container">
+        <div class="column one-fifth team-person">
+          <div class="image" style="background-image: url('/images/people/dillon.png');"></div>
+          <div class="name">Dillon Chen</div>
+          <div class="bio">Investor at Turing Capital</div>
+        </div>
+        <div class="column one-fifth team-person">
+          <div class="image" style="background-image: url('/images/people/raymond.jpg');"></div>
+          <div class="name">Raymond Zhong</div>
+          <div class="bio">Engineering at Addepar, AngelList</div>
+        </div>
+        <div class="column one-fifth team-person">
+          <div class="image" style="background-image: url('/images/people/drew.png');"></div>
+          <div class="name">Drew Stone</div>
+          <div class="bio">Quant at MANA, Ethereum dev at Chronicled</div>
+        </div>
+        <div class="column one-fifth team-person">
+          <div class="image" style="background-image: url('/images/people/mike.png');"></div>
+          <div class="name">Michael Karnjanaprakorn</div>
+          <div class="bio">Founder of Skillshare</div>
+        </div>
+        <div class="column one-fifth team-person">
+          <div class="image" style="background-image: url('/images/people/ryan.jpg');"></div>
+          <div class="name">Ryan Zurrer</div>
+          <div class="bio">Director at Web3 Foundation</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-links">
+          <div class="footer-logo"></div>
+          <a href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633" target="_blank">Whitepaper</a>
+          &middot;
+          <a href="/faq">FAQs</a>
+          &middot;
+          <a href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a>
+          &middot;
+          <a href="https://twitter.com/heyedgeware" target="_blank">Twitter</a>
+          &middot;
+          <a href="https://t.me/heyedgeware" target="_blank">Telegram</a>
+          &middot;
+          <a href="https://github.com/hicommonwealth" target="_blank">Github</a>
+        </div>
+        <div class="footer copyright">&copy; 2019 Commonwealth Labs</div></div>
+    </div>
+  </div>
+</body>
+</html>
