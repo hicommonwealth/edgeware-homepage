@@ -231,7 +231,7 @@ a.overlay-close {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    width: 36px;
+    width: 53px;
     height: 40px;
     margin-right: 19px;
     margin-top: -4px;
@@ -506,17 +506,6 @@ a.overlay-close {
     padding: 40px 0;
     color: #fff;
     font-size: 0.9em;
-}
-.footer-logo {
-    float: left;
-    background-image: url('/images/logo-white.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 26px;
-    height: 30px;
-    margin-right: 19px;
-    margin-top: -3px;
 }
 .footer-links {
     float: left;
