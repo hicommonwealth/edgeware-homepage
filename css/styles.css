@@ -355,8 +355,35 @@ a.overlay-close {
     margin-top: 4px;
     color: #999;
 }
+.section.summary a.action {
+    text-decoration: none;
+    font-size: 90%;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #e4457e;
+}
+.section.summary a.action.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+.section.summary a.action svg {
+    position: relative;
+    top: 4px;
+    margin-left: 4px;
+    stroke: #e4457e;
+    stroke-width: 0.5px;
+    fill: #e4457e;
+}
+.section.summary a.action:hover {
+    text-decoration: underline;
+}
 
 /* users + lockdrop */
+.section.about-users button {
+    opacity: 0.4;
+    pointer-events: none;
+    margin-top: 30px;
+}
 .section.about-users {
     margin: 75px auto 85px;
     max-width: 480px;

@@ -116,14 +116,16 @@
           <h2>A self-improving smart contract blockchain</h2>
           <div class="item">
             <p>
-              Edgeware is a WASM-based smart contract platform. Participants in
-              the network vote, delegate, and fund each other to improve
-              the network.
+              Edgeware is a high-performance, self-upgrading WASM
+              smart contract platform, in the Polkadot ecosystem.
             </p>
             <p>
-              We are implementing a community token distribution
-              that gives away >90% of initial tokens. For more
-              updates, sign up here:
+              Participants vote, delegate, and fund each other to
+              upgrade the network.
+            </p>
+            <p>
+              We are giving away >90% of the network to build a strong
+              initial community. See more:
             </p>
           </div>
           <br/>
@@ -164,36 +166,54 @@
   <div class="wrapper gray-background">
     <div class="container">
         <div class="section summary">
-          <h2>Built for network participants</h2>
+          <h2>Key ideas</h2>
           <div class="divider"></div>
           <div class="row">
             <div class="column one-fourth">
-              <h3>Decentralized app developers</h3>
+              <h3>Polkadot's first smart contract chain</h3>
               <p>
-                Deploy smart contracts in a lower-stakes environment
-                with real users and incentives.
+                Once Polkadot is live, Edgeware will be the easiest &
+                simplest way to deploy code to the Polkadot network
               </p>
+              <a class="action" target="_blank" href="https://medium.com/polkadot-network/polkadot-the-foundation-of-a-new-internet-e8800ec81c7">
+                About Polkadot
+                <svg focusable="false" preserveAspectRatio="xMidYMid meet" aria-label="Open resource" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" role="img" style="will-change: transform;"><path d="M26 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9v2H6v20h20v-9h2v9a2 2 0 0 1-2 2z"></path><path d="M21 2v2h5.59L18 12.59 19.41 14 28 5.41V11h2V2h-9z"></path></svg>
+              </a>
             </div>
             <div class="column one-fourth">
-              <h3>Stakers and validators</h3>
+              <h3>Powered by WebAssembly</h3>
               <p>
-                Receive tokens for validating the network. Vote on
-                chain upgrades and improvement proposals.
+                Edgeware smart contracts are written in Rust and
+                executed in WASM, for an order-of-magnitude speedup
               </p>
+              <a class="action disabled" target="_blank" href="#">
+                About WASM<br/>(coming soon)
+                <!--<svg focusable="false" preserveAspectRatio="xMidYMid meet" aria-label="Open resource" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" role="img" style="will-change: transform;"><path d="M26 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9v2H6v20h20v-9h2v9a2 2 0 0 1-2 2z"></path><path d="M21 2v2h5.59L18 12.59 19.41 14 28 5.41V11h2V2h-9z"></path></svg>-->
+              </a>
             </div>
             <div class="column one-fourth">
-              <h3>Governance developers</h3>
+              <h3>Actively governed, with a treasury</h3>
               <p>
-                Create experimental organizations with hot-swappable
-                voting, delegation, and fund management.
+                Edgeware's on-chain treasury ensures the protocol will
+                always be funded and maintained, while chain upgrades
+                can be voted in
               </p>
+              <a class="action disabled" target="_blank" href="#">
+                About Governance<br/>(coming soon)
+                <!--<svg focusable="false" preserveAspectRatio="xMidYMid meet" aria-label="Open resource" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" role="img" style="will-change: transform;"><path d="M26 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9v2H6v20h20v-9h2v9a2 2 0 0 1-2 2z"></path><path d="M21 2v2h5.59L18 12.59 19.41 14 28 5.41V11h2V2h-9z"></path></svg>-->
+              </a>
             </div>
             <div class="column one-fourth">
-              <h3>Core protocol developers</h3>
+              <h3>A pioneer chain in governance</h3>
               <p>
-                Test out scalability and security upgrades on an
-                actively-governed staging network.
+                Edgeware will be a testbed for mechanisms like
+                on-chain identity, quadratic voting, and modular
+                governance
               </p>
+              <a class="action" target="_blank" href="https://medium.com/commonwealth-labs/meet-edgeware-25e881e4a37e">
+                About our vision
+                <svg focusable="false" preserveAspectRatio="xMidYMid meet" aria-label="Open resource" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" role="img" style="will-change: transform;"><path d="M26 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9v2H6v20h20v-9h2v9a2 2 0 0 1-2 2z"></path><path d="M21 2v2h5.59L18 12.59 19.41 14 28 5.41V11h2V2h-9z"></path></svg>
+              </a>
             </div>
           </div>
         </div>
@@ -207,8 +227,8 @@
         airdrop where participants timelock ETH to receive EDG.
       </p>
       <p>
-        The lockdrop will take place in early 2019, and will allocate
-        >90% of tokens in the genesis block to participants.
+        The lockdrop will take place in Summer 2019, and give away >90%
+        of tokens in the genesis block to participants.
       </p>
       <p>
         Lockdroppers will be able to timelock their ETH
@@ -216,9 +236,14 @@
         their ETH back afterwards.
       </p>
       <p>
-        This broad token distribution will bring a wider set of
+        This broad token distribution will bring a wide set of
         participants into the governance process.
       </p>
+      <center>
+        <button class="lockdrop-button disabled">
+          Lockdrop UI coming soon
+        </button>
+      </center>
     </div>
   </div>
   <div class="wrapper gray-background">
