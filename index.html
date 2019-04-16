@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="css/styles.css?updated=20190528">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/js-yaml.min.js"></script>
+  <script src="js/internationalize.js"></script>
+
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136522342-1"></script>
@@ -67,18 +70,19 @@
     <div id="menuToggle">
       <input type="checkbox" />
       <ul id="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="https://arena-attachments.s3.amazonaws.com/4283183/6f6c1e4dd35661c6e0eb001caa537ac3.pdf?1557976574"
+        <li><a class="i18n" href="/">Home</a></li>
+        <li><a class="i18n" href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633"
            target="_blank">Whitepaper</a></li>
-        <li><a href="/faq">FAQs</a></li>
-        <li><a href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a></li>
-        <li><a href="https://twitter.com/heyedgeware" target="_blank">Twitter</a></li>
+        <li><a class="i18n" href="/faq">FAQs</a></li>
+        <li><a class="i18n" href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a></li>
+        <li><a class="i18n" href="https://twitter.com/heyedgeware" target="_blank">Twitter</a></li>
         <br>
-        <li><a href="http://forum.edgewa.re" target="_blank">Forum</a></li>
-        <li><a href="https://blog.edgewa.re" target="_blank">Blog</a></li>
-        <li><a href="https://medium.com/commonwealth-labs" target="_blank">Medium</a></li>
-        <li><a href="https://github.com/hicommonwealth" target="_blank">Github</a></li>
-        <li><a href="https://angel.co/commonwealth-labs" target="_blank">Jobs</a></li>
+        <li><a class="i18n" href="http://forum.edgewa.re" target="_blank">Forum</a></li>
+        <li><a class="i18n" href="https://medium.com/commonwealth-labs" target="_blank">Blog</a></li>
+        <li><a class="i18n" href="https://github.com/hicommonwealth" target="_blank">Github</a></li>
+        <li><a class="i18n" href="https://angel.co/commonwealth-labs" target="_blank">Jobs</a></li>
+        <br>
+        <li class="i18n-selector"></li>
       </ul>
     </div>
   </nav>
@@ -89,20 +93,20 @@
     <div class="section heading">
       <a href="/">
         <div class="logo"></div>
-        <h1>Edgeware</h1>
+        <h1 class="i18n">Edgeware</h1>
       </a>
       <div class="header-links">
-        <a href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633" target="_blank">Whitepaper</a>
+        <a class="i18n" href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633" target="_blank">Whitepaper</a>
         &middot;
-        <a href="/faq">FAQs</a>
+        <a class="i18n" href="/faq">FAQs</a>
         &middot;
-        <a href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a>
+        <a class="i18n" href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a>
         &middot;
-        <a href="https://twitter.com/heyedgeware" target="_blank">Twitter</a>
+        <a class="i18n" href="https://twitter.com/heyedgeware" target="_blank">Twitter</a>
         &middot;
         <a class="header-links-hamburger" href="#"
            onclick="javascript: $('#menuToggle input').prop('checked', !$('#menuToggle input').prop('checked'));">
-          More...
+          <span class="i18n">More...</span>
         </a>
       </div>
       <div class="header-links-mobile">
@@ -123,20 +127,20 @@
       <!-- top -->
       <div class="row">
         <div class="column one-half">
-          <h2>A self-improving smart contract blockchain</h2>
+          <h2 class="i18n">A self-improving smart contract blockchain</h2>
           <div class="item">
-            <p>
+            <p class="i18n">
               Edgeware is a high-performance, self-upgrading WASM
               smart contract platform, and Polkadot's first smart
               contract chain.
             </p>
-            <p>
+            <p class="i18n">
               Active governance will allow participants to vote, delegate,
               and fund upgrades to the network.
             </p>
-            <p>
-              We are giving away >90% of the network to ETH holders to
-              build a strong initial community:
+            <p class="i18n">
+              We are giving away >90% of the network to build a strong
+              initial community. See more:
             </p>
           </div>
           <br/>
@@ -146,8 +150,8 @@
               <form action="https://edgewa.us19.list-manage.com/subscribe/post?u=04521a838ac5cb3bb4012c002&amp;id=6afd0a1458" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <input type="email" value="" name="EMAIL" class="required email"
                        placeholder="name@email.com" id="mce-EMAIL">
-                  <input type="submit" value="Get Updates" name="subscribe"
-                         class="btn btn-subscribe-email" id="mc-embedded-subscribe" class="button">
+                  <button type="submit" name="subscribe"
+                         class="button btn btn-subscribe-email i18n" id="mc-embedded-subscribe">Get Updates</button>
                   <div id="mce-responses" class="clear">
                     <div class="response" id="mce-error-response" style="display:none"></div>
                     <div class="response" id="mce-success-response" style="display:none"></div>
@@ -177,52 +181,52 @@
   <div class="wrapper gray-background">
     <div class="container">
         <div class="section summary">
-          <h2>Key ideas</h2>
+          <h2 class="i18n">Key ideas</h2>
           <div class="divider"></div>
           <div class="row">
             <div class="column one-fourth">
-              <h3>Polkadot's first smart contract chain</h3>
-              <p>
+              <h3 class="i18n">Polkadot's first smart contract chain</h3>
+              <p class="i18n">
                 Once Polkadot is live, Edgeware will be the easiest &
                 simplest way to deploy code to the Polkadot network
               </p>
               <a class="action" target="_blank" href="https://medium.com/polkadot-network/polkadot-the-foundation-of-a-new-internet-e8800ec81c7">
-                About Polkadot
+                <span class="i18n">About Polkadot</span>
                 <svg focusable="false" preserveAspectRatio="xMidYMid meet" aria-label="Open resource" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" role="img" style="will-change: transform;"><path d="M26 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9v2H6v20h20v-9h2v9a2 2 0 0 1-2 2z"></path><path d="M21 2v2h5.59L18 12.59 19.41 14 28 5.41V11h2V2h-9z"></path></svg>
               </a>
             </div>
             <div class="column one-fourth">
-              <h3>Powered by WebAssembly</h3>
-              <p>
+              <h3 class="i18n">Powered by WebAssembly</h3>
+              <p class="i18n">
                 Edgeware smart contracts are written in Rust and
                 executed in WASM, for an order-of-magnitude speedup
               </p>
               <a class="action disabled" target="_blank" href="#">
-                About WASM<br/>(coming soon)
+                <span class="i18n">About WASM</span><br/>(<span class="i18n">Coming Soon</span>)
                 <!--<svg focusable="false" preserveAspectRatio="xMidYMid meet" aria-label="Open resource" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" role="img" style="will-change: transform;"><path d="M26 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9v2H6v20h20v-9h2v9a2 2 0 0 1-2 2z"></path><path d="M21 2v2h5.59L18 12.59 19.41 14 28 5.41V11h2V2h-9z"></path></svg>-->
               </a>
             </div>
             <div class="column one-fourth">
-              <h3>Actively governed, with a treasury</h3>
-              <p>
+              <h3 class="i18n">Actively governed, with a treasury</h3>
+              <p class="i18n">
                 Edgeware's on-chain treasury ensures the protocol will
                 always be funded and maintained, while chain upgrades
                 can be voted in
               </p>
               <a class="action disabled" target="_blank" href="#">
-                About Governance<br/>(coming soon)
+                <span class="i18n">About Governance</span><br/>(<span class="i18n">Coming Soon</span>)
                 <!--<svg focusable="false" preserveAspectRatio="xMidYMid meet" aria-label="Open resource" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" role="img" style="will-change: transform;"><path d="M26 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9v2H6v20h20v-9h2v9a2 2 0 0 1-2 2z"></path><path d="M21 2v2h5.59L18 12.59 19.41 14 28 5.41V11h2V2h-9z"></path></svg>-->
               </a>
             </div>
             <div class="column one-fourth">
-              <h3>A pioneer chain in governance</h3>
-              <p>
+              <h3 class="i18n">A pioneer chain in governance</h3>
+              <p class="i18n">
                 Edgeware will be a testbed for mechanisms like
                 on-chain identity, quadratic voting, and modular
                 governance
               </p>
               <a class="action" target="_blank" href="https://medium.com/commonwealth-labs/meet-edgeware-25e881e4a37e">
-                About our vision
+                <span class="i18n">About Our Vision</span>
                 <svg focusable="false" preserveAspectRatio="xMidYMid meet" aria-label="Open resource" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" role="img" style="will-change: transform;"><path d="M26 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9v2H6v20h20v-9h2v9a2 2 0 0 1-2 2z"></path><path d="M21 2v2h5.59L18 12.59 19.41 14 28 5.41V11h2V2h-9z"></path></svg>
               </a>
             </div>
@@ -232,21 +236,21 @@
   </div>
   <div class="container">
     <div class="section about-users">
-      <h2>The lockdrop</h2>
-      <p>
+      <h2 class="i18n">The lockdrop</h2>
+      <p class="i18n">
         Edgeware will be launched via a <em>lockdrop</em>, a modified
         airdrop where participants timelock ETH to receive EDG.
       </p>
-      <p>
+      <p class="i18n">
         The lockdrop will take place in Summer 2019, and give away >90%
         of tokens in the genesis block to participants.
       </p>
-      <p>
+      <p class="i18n">
         Lockdroppers will be able to timelock their ETH
         for 3 months, 6 months, or 1 year. Participants will get 100% of
         their ETH back afterwards.
       </p>
-      <p>
+      <p class="i18n">
         This broad token distribution will bring a wide set of
         participants into the governance process.
       </p>
@@ -263,16 +267,16 @@
       <!-- about-substrate -->
       <div class="section summary">
         <!-- text -->
-        <h2>The Edgeware stack</h2>
+        <h2 class="i18n">The Edgeware stack</h2>
         <div class="divider"></div>
         <div class="row">
           <div class="column one-half paragraphs">
-            <p>
+            <p class="i18n">
               Effective on-chain governance requires new tech to be
               built: DAOs, economic mechanisms, cryptographic voting
               systems, and interfaces for collaboration.
             </p>
-            <p>
+            <p class="i18n">
               Edgeware will build these systems through a process of
               recursive self-improvement. On-chain governance will be
               used to choose and fund improvements, and launch them on
@@ -283,23 +287,23 @@
             <div class="stacks">
               <br/>
               <div class="row">
-                <div class="column one-half"><div class="stack-item">DAO</div></div>
+                <div class="column one-half"><div class="stack-item i18n">DAO</div></div>
               </div>
               <div class="row">
-                <div class="column one-half"><div class="stack-item">Treasury</div></div>
-                <div class="column one-half"><div class="stack-item">Dev Tools</div></div>
+                <div class="column one-half"><div class="stack-item i18n">Treasury</div></div>
+                <div class="column one-half"><div class="stack-item i18n">Dev Tools</div></div>
               </div>
               <div class="row">
-                <div class="column one-half"><div class="stack-item">Voting</div></div>
-                <div class="column one-fourth"><div class="stack-item">Rust</div></div>
-                <div class="column one-fourth"><div class="stack-item">EVM</div></div>
+                <div class="column one-half"><div class="stack-item i18n">Voting</div></div>
+                <div class="column one-fourth"><div class="stack-item i18n">Rust</div></div>
+                <div class="column one-fourth"><div class="stack-item i18n">EVM</div></div>
               </div>
               <div class="row">
-                <div class="column one-half"><div class="stack-item">Identity</div></div>
-                <div class="column one-half"><div class="stack-item">Wasm</div></div>
+                <div class="column one-half"><div class="stack-item i18n">Identity</div></div>
+                <div class="column one-half"><div class="stack-item i18n">Wasm</div></div>
               </div>
               <div class="row">
-                <div class="column"><div class="stack-item">Parity Substrate</div></div>
+                <div class="column"><div class="stack-item i18n">Parity Substrate</div></div>
               </div>
             </div>
           </div>
@@ -312,17 +316,17 @@
 
     <!-- faq -->
 <!--    <!div class="section faq">
-      <h2>Frequently Asked Questions</h2>
+      <h2 class="i18n">Frequently Asked Questions</h2>
       <div class="items clearfix">
         <div class="item">
-          <h3>Edgeware is amazing! How can I get involved?</h3>
+          <h3 class="i18n">Edgeware is amazing! How can I get involved?</h3>
           <div class="item-body">
             <p>Fatebuntur stoici haec omnia dicta esse praeclare, neque
               eam causam Zenoni desciscendi fuisse.</p>
           </div>
         </div>
         <div class="item">
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+          <h3 class="i18n">Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Tibi hoc incredibile, quod beatissimum?</h3>
           <div class="item-body">
             <p>Fatebuntur stoici haec omnia dicta esse praeclare, neque
@@ -330,7 +334,7 @@
           </div>
         </div>
         <div class="item">
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+          <h3 class="i18n">Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Tibi hoc incredibile, quod beatissimum?</h3>
           <div class="item-body">
             <p>Fatebuntur stoici haec omnia dicta esse praeclare, neque
@@ -338,7 +342,7 @@
           </div>
         </div>
         <div class="item">
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing
+          <h3 class="i18n">Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Tibi hoc incredibile, quod beatissimum?</h3>
           <div class="item-body">
             <p>Fatebuntur stoici haec omnia dicta esse praeclare, neque
@@ -354,14 +358,14 @@
     <!-- cta -->
     <div class="section cta">
       <div class="email-updates">
-      <h2>Sign up for more information</h2>
+      <h2 class="i18n">Sign up for more information</h2>
             <!-- Begin Mailchimp Signup Form -->
             <div id="mc_embed_signup2">
               <form action="https://edgewa.us19.list-manage.com/subscribe/post?u=04521a838ac5cb3bb4012c002&amp;id=6afd0a1458" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                 <input type="email" value="" name="EMAIL" class="required email"
                        placeholder="name@email.com" id="mce-EMAIL">
-                  <input type="submit" value="Get Updates" name="subscribe"
-                         class="btn btn-subscribe-email" id="mc-embedded-subscribe" class="button">
+                  <button type="submit" name="subscribe"
+                         class="button btn btn-subscribe-email i18n" id="mc-embedded-subscribe">Get Updates</button>
                   <div id="mce-responses" class="clear">
                     <div class="response" id="mce-error-response" style="display:none"></div>
                     <div class="response" id="mce-success-response" style="display:none"></div>
@@ -371,7 +375,7 @@
               </form>
             </div>
             <!--End mc_embed_signup2-->
-            <div class="button-text">
+            <div class="button-text i18n">
               Tech and lockdrop updates, up to once per month
             </div>
             <!-- <button class="btn btn-goto-docs btn-disabled">Read the Documentation (coming soon)</button> -->
@@ -380,36 +384,36 @@
 
     <!-- team -->
     <div class="section team">
-      <h4>About Commonwealth Labs</h4>
-      <div class="row about-company">
+      <h4 class="i18n">About Commonwealth Labs</h4>
+      <div class="row about-company i18n">
         Edgeware is a project by Commonwealth Labs. We're building a multi-chain interface for
         decentralized governance. Our founding team and advisors include:
       </div>
       <div class="row team-container">
         <div class="column one-fifth team-person">
           <div class="image" style="background-image: url('/images/people/dillon.png');"></div>
-          <div class="name">Dillon Chen</div>
-          <div class="bio">Investor at Turing Capital</div>
+          <div class="i18n name">Dillon Chen</div>
+          <div class="i18n bio">Investor at Turing Capital</div>
         </div>
         <div class="column one-fifth team-person">
           <div class="image" style="background-image: url('/images/people/raymond.jpg');"></div>
-          <div class="name">Raymond Zhong</div>
-          <div class="bio">Engineering at Addepar, AngelList</div>
+          <div class="i18n name">Raymond Zhong</div>
+          <div class="i18n bio">Engineering at Addepar, AngelList</div>
         </div>
         <div class="column one-fifth team-person">
           <div class="image" style="background-image: url('/images/people/drew.png');"></div>
-          <div class="name">Drew Stone</div>
-          <div class="bio">Quant at MANA, Ethereum dev at Chronicled</div>
+          <div class="i18n name">Drew Stone</div>
+          <div class="i18n bio">Quant at MANA, Ethereum dev at Chronicled</div>
         </div>
         <div class="column one-fifth team-person">
           <div class="image" style="background-image: url('/images/people/mike.png');"></div>
-          <div class="name">Michael Karnjanaprakorn</div>
-          <div class="bio">Founder of Skillshare</div>
+          <div class="i18n name">Michael Karnjanaprakorn</div>
+          <div class="i18n bio">Founder of Skillshare</div>
         </div>
         <div class="column one-fifth team-person">
           <div class="image" style="background-image: url('/images/people/ryan.jpg');"></div>
-          <div class="name">Ryan Zurrer</div>
-          <div class="bio">Director at Web3 Foundation</div>
+          <div class="i18n name">Ryan Zurrer</div>
+          <div class="i18n bio">Director at Web3 Foundation</div>
         </div>
       </div>
     </div>
@@ -419,19 +423,19 @@
     <div class="container">
       <div class="row">
         <div class="footer-links">
-          <a href="https://arena-attachments.s3.amazonaws.com/4283183/6f6c1e4dd35661c6e0eb001caa537ac3.pdf?1557976574" target="_blank">Whitepaper</a>
+          <a class="i18n" href="https://arena-attachments.s3.amazonaws.com/3850782/1928e31873075de95992d4987eb14a2e.pdf?1552432633" target="_blank">Whitepaper</a>
           &middot;
-          <a href="/faq">FAQs</a>
+          <a class="i18n" href="/faq">FAQs</a>
           &middot;
-          <a href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a>
+          <a class="i18n" href="https://discordapp.com/invite/bDktqyj" target="_blank">Discord</a>
           &middot;
-          <a href="https://twitter.com/heyedgeware" target="_blank">Twitter</a>
+          <a class="i18n" href="https://twitter.com/heyedgeware" target="_blank">Twitter</a>
           &middot;
-          <a href="https://t.me/heyedgeware" target="_blank">Telegram</a>
+          <a class="i18n" href="https://t.me/heyedgeware" target="_blank">Telegram</a>
           &middot;
-          <a href="https://github.com/hicommonwealth" target="_blank">Github</a>
+          <a class="i18n" href="https://github.com/hicommonwealth" target="_blank">Github</a>
         </div>
-        <div class="footer copyright">&copy; 2019 Commonwealth Labs</div></div>
+        <div class="footer copyright">&copy; 2019 <span class="i18n">Commonwealth Labs</span></div></div>
     </div>
   </div>
 </body>
