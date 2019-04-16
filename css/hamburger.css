@@ -126,6 +126,11 @@
 #menu a:hover {
     text-decoration: underline;
 }
+#menu li.i18n-selector a {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 17.5px;
+}
 
 /*
  * And let's slide it in from the left
