@@ -1,3 +1,13 @@
+$(function() {
+  $('html').on('click', function(e) {
+    var target = $(e.target);
+    if (target.closest('.header-links-hamburger').length > 0) return;
+    $('#menuToggle input[type="checkbox"]').prop('checked', false);
+  });
+});
+
+var hash = window.location.hash.replace(/^#/, '');
+
 $.get('/i18n/languages.yaml').then(function(languagesText) {
   var languages = jsyaml.load(languagesText);
 
@@ -21,10 +31,20 @@ $.get('/i18n/languages.yaml').then(function(languagesText) {
         .text(key.toUpperCase())
         .click(function(e) {
           e.preventDefault();
-          translatePage("en", key);
+          translatePage('en', key);
+          if (history.pushState) {
+            history.pushState(null, null, '#' + key);
+          } else {
+            location.hash = '#' + key;
+          }
         })
         .appendTo($selector);
     });
+
+    // translate the page on load, if a language is selected
+    if (hash && dictionaries[hash]) {
+      translatePage('en', hash);
+    }
 
     // find all DOM elements on the page with .i18n class, and translate them
     function translatePage(fromLang, toLang) {
