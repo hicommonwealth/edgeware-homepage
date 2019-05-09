@@ -1,0 +1,76 @@
+title: Edgeware
+author: Commonwealth Labs
+
+lead1: 자가 개선의 스마트 계약 블록체인
+lead2: Edgeware는 WASM 기반의 스마트 계약 플랫폼입니다.
+lead3: 네트워크 참여자는 네트워크 개선을 위해 투표 및 위임, 기금 지원을 서로 이행합니다.
+lead4: "현재 초기 토큰의 90%에 해당하는 커뮤니티 토큰 분배를 시행하고 있습니다. 자세한 업데이트 소식은 여기에 이메일을 등록하세요:"
+
+menu: More...
+
+heading1: Home
+heading2: Whitepaper
+heading3: FAQs
+heading4: Discord
+heading5: Twitter
+heading6: Telegram
+heading7: Github
+heading8: More
+heading9: Forum
+heading10: Blog
+heading11: Jobs
+heading12: Get Updates
+
+intro1: Polkadot's first smart contract chain
+intro2: Powered by WebAssembly
+intro3: Actively governed, with a treasury
+intro4: A pioneer chain in governance
+
+intro5: Once Polkadot is live, Edgeware will be the easiest & simplest way to deploy code to the Polkadot network
+intro6: Edgeware smart contracts are written in Rust and executed in WASM, for an order-of-magnitude speedup
+intro7: Edgeware's on-chain treasury ensures the protocol will always be funded and maintained, while chain upgrades can be voted in
+intro8: Edgeware will be a testbed for mechanisms like on-chain identity, quadratic voting, and modular governance
+
+intro9: About Polkadot
+intro10: About WASM
+intro11: About Governance
+intro12: About Our Vision
+intro13: Coming Soon
+
+lockdrop1: 락드롭 
+lockdrop2: Edgeware는 참여자가 EDG를 받기 위해 보유한 ETH를 타임락 (timelock; 시한설정) 하는 에어드롭의 수정 형태인 락드롭 (Lockdrop)을 통해 론칭됩니다.
+lockdrop3: 락드롭은 2019년 초에 있을 예정이며, 참여자들에게 제네시스 블록의 토큰을 90 % 이상 배분합니다.
+lockdrop4: 락드롭에 참여하는 분들은 3 개월, 6 개월 또는 1 년 동안 ETH를 타임락 할 수 있습니다. 이후에 ETH의 100 %를 되돌려 받게 됩니다.
+lockdrop5: 이러한 광대한 토큰 배포는 보다 폭넓은 참여자 집단을 거버넌스 프로세스로 불러올 수 있습니다.
+lockdrop6: Lockdrop UI coming soon
+
+stack1: Edgeware 지분
+stack2: 효과적인 온체인 (on-chain) 거버넌스에는 DAO 및 경제적 메커니즘, 암호화 투표 체계, 협력을 위한 인터페이스와 같은 새로운 기술 구축이 필요합니다.
+stack3: Edgeware는 반복적인 자가 개선 프로세스를 통해 이러한 시스템을 구축합니다. 온체인 거버넌스는 개선안의 선택과 자금 지원에 사용되어 네트워크 상에서 실행됩니다.
+stack_component1: DAO
+stack_component2: 재무
+stack_component3: 개발 툴
+stack_component4: 투표
+stack_component5: Rust
+stack_component6: EVM
+stack_component7: 신원확인
+stack_component8: Wasm
+stack_component9: 패러티 서브스트레이트
+
+cta1: 더 자세한 정보는 이메일을 등록하세요 
+cta2: 매달 일회씩 테크 & 락드롭 업데이트를 보내드립니다
+
+about1: Commonwealth Labs 소개
+about2: "Edgeware는 Commonwealth Labs (커먼웰스 랩스)에서 진행하는 프로젝트입니다. 당사는 탈중앙형 거버넌스를 위한 다중 체인 인터페이스를 구축하고 있습니다. 창립팀 및 고문은 다음과 같습니다:"
+about3: Dillon Chen
+about4: Turing Capital의 투자자
+about5: Raymond Zhong
+about6: Addepar, AngelList의 엔지니어
+about7: Drew Stone
+about8: MANA의 금융분석가 & Chronicled의 이더리움 개발자
+about9: Michael Karnjanaprakorn
+about10: Skillshare의 창립자
+about11: Ryan Zurrer
+about12: Web3 Foundation의 이사
+
+faq1: Frequently Asked Questions
