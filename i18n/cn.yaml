@@ -6,36 +6,36 @@ lead2: Edgeware是一个基于WASM的智能合约平台。
 lead3: 网络参与者互相投票、委托和资助以改善网络。
 lead4: 我们正在实施一个社区代币发配，分发超过90%的初始代币。有关更多更新，请在此处注册：
 
-menu: More...
+menu: 更多...
 
-heading1: Home
-heading2: Whitepaper
-heading3: FAQs
+heading1: 主页
+heading2: 白皮书
+heading3: 常见问题解答
 heading4: Discord
 heading5: Twitter
 heading6: Telegram
 heading7: Github
-heading8: More
-heading9: Forum
-heading10: Blog
-heading11: Jobs
-heading12: Get Updates
+heading8: 更多
+heading9: 论坛
+heading10: 博客
+heading11: 工作
+heading12: 获取更新
 
-intro1: Polkadot's first smart contract chain
-intro2: Powered by WebAssembly
-intro3: Actively governed, with a treasury
-intro4: A pioneer chain in governance
+intro1: Polkadot的第一个智能合约链
+intro2: 由WebAssembly提供支持
+intro3: 积极治理，财政部
+intro4: 治理的先驱链
 
-intro5: Once Polkadot is live, Edgeware will be the easiest & simplest way to deploy code to the Polkadot network
-intro6: Edgeware smart contracts are written in Rust and executed in WASM, for an order-of-magnitude speedup
-intro7: Edgeware's on-chain treasury ensures the protocol will always be funded and maintained, while chain upgrades can be voted in
-intro8: Edgeware will be a testbed for mechanisms like on-chain identity, quadratic voting, and modular governance
+intro5: 一旦Polkadot上线，Edgeware将是将代码部署到Polkadot网络的最简单最简单的方法
+intro6: Edgeware智能合约是用Rust编写的，并在WASM中执行，以实现数量级的加速
+intro7: Edgeware的链式资金管理系统确保协议始终得到资助和维护，同时可以对链式升级进行投票
+intro8: Edgeware将成为链上身份，二次投票和模块化治理等机制的测试平台
 
-intro9: About Polkadot
-intro10: About WASM
-intro11: About Governance
-intro12: About Our Vision
-intro13: Coming Soon
+intro9: 关于波尔卡多
+intro10: 关于WASM
+intro11: 关于治理
+intro12: 关于我们的愿景
+intro13: 快来了
 
 lockdrop1: 锁定放置
 lockdrop2: Edgeware将通过一个锁定放置来启动，这是一个经过修改的空投，参与者在其中定时锁定以太坊以接收EDG。
@@ -73,4 +73,4 @@ about10: Skillshare创始人
 about11: Ryan Zurrer
 about12: Web3基金会主任
 
-faq1: faq1
+faq1: 经常问的问题
