@@ -6,36 +6,36 @@ lead2: Edgeware系一个基于WASM嘅智慧契平台。
 lead3: 网络参与者互相投票、授权同资助以改善网络。
 lead4:  我哋喺实施一个议员代币发配，派超过90%嘅初始代币。有关多啲更新，请喺此处注册：
 
-menu: menu
+menu: 更多...
 
-heading1: heading1
-heading2: heading2
-heading3: heading3
-heading4: heading4
-heading5: heading5
-heading6: heading6
-heading7: heading7
-heading8: heading8
-heading9: heading9
-heading10: heading10
-heading11: heading11
-heading12: heading12
+heading1: 家
+heading2: 白皮書
+heading3: 常見問題解答
+heading4: Discord
+heading5: Twitter
+heading6: Telegram
+heading7: Github
+heading8: 更多
+heading9: 論壇
+heading10: 博客
+heading11: 工作
+heading12: 獲取更新
 
-intro1: intro1
-intro2: intro2
-intro3: intro3
-intro4: intro4
+intro1: Polkadot的第一個智能合約鏈
+intro2: 由WebAssembly提供支持
+intro3: 積極治理，財政部
+intro4: 治理的先驅鏈
 
-intro5: intro5
-intro6: intro6
-intro7: intro7
-intro8: intro8
+intro5: 一旦Polkadot上線，Edgeware將是將代碼部署到Polkadot網絡的最簡單最簡單的方法
+intro6: Edgeware智能合約是用Rust編寫的，並在WASM中執行，以實現數量級的加速
+intro7: Edgeware的鍊式資金管理系統確保協議始終得到資助和維護，同時可以對鍊式升級進行投票
+intro8: Edgeware將成為鏈上身份，二次投票和模塊化治理等機制的測試平台
 
-intro9: intro9
-intro10: intro10
-intro11: intro11
-intro12: intro12
-intro13: intro13
+intro9: 關於Polkadot網絡
+intro10: 關於WASM
+intro11: 關於治理
+intro12: 關於我們的願景
+intro13: 快來了
 
 lockdrop1: 锁定放置
 lockdrop2: Edgeware将通过一个锁定放置嚟启动，呢个系一个经过修改嘅空投，参与者喺其中定时锁定以太坊以接受EDG。
