@@ -8,41 +8,41 @@ lead4: "현재 초기 토큰의 90%에 해당하는 커뮤니티 토큰 분배�
 
 menu: More...
 
-heading1: Home
-heading2: Whitepaper
-heading3: FAQs
+heading1: 홈페이지
+heading2: 백지
+heading3: 자주하는 질문
 heading4: Discord
 heading5: Twitter
 heading6: Telegram
 heading7: Github
-heading8: More
-heading9: Forum
-heading10: Blog
-heading11: Jobs
-heading12: Get Updates
+heading8: 더
+heading9: 법정
+heading10: 블로그
+heading11: 채용 정보
+heading12: 업데이트 얻기
 
-intro1: Polkadot's first smart contract chain
-intro2: Powered by WebAssembly
-intro3: Actively governed, with a treasury
-intro4: A pioneer chain in governance
+intro1: Polkadot 최초의 스마트 계약 체인
+intro2: WebAssembly에서 제공
+intro3: 적극적으로 통치되고, 재무부와 함께
+intro4: 거버넌스의 개척자 체인
 
-intro5: Once Polkadot is live, Edgeware will be the easiest & simplest way to deploy code to the Polkadot network
-intro6: Edgeware smart contracts are written in Rust and executed in WASM, for an order-of-magnitude speedup
-intro7: Edgeware's on-chain treasury ensures the protocol will always be funded and maintained, while chain upgrades can be voted in
-intro8: Edgeware will be a testbed for mechanisms like on-chain identity, quadratic voting, and modular governance
+intro5: 일단 Polkadot이 실행되면 Edgeware는 Polkadot 네트워크에 코드를 배포하는 가장 쉽고 간단한 방법이 될 것입니다.
+intro6: Edgeware 지능형 계약은 Rust로 작성되고 WASM에서 실행되며 한 차원 높은 속도 향상을 제공합니다.
+intro7: Edgeware의 체인상의 재무부는 의정서가 항상 자금 지원되고 유지 될 수 있도록 보장하며 체인 업그레이드는
+intro8: Edgeware는 온 체인 정체성, 2 차 투표 및 모듈 식 거버넌스와 같은 메커니즘에 대한 테스트 베드가 될 것입니다.
 
-intro9: About Polkadot
-intro10: About WASM
-intro11: About Governance
-intro12: About Our Vision
-intro13: Coming Soon
+intro9: Polkadot 정보
+intro10: WASM 정보
+intro11: 거버넌스 정보
+intro12: 우리의 비전에 대하여
+intro13: 출시 예정
 
 lockdrop1: 락드롭 
 lockdrop2: Edgeware는 참여자가 EDG를 받기 위해 보유한 ETH를 타임락 (timelock; 시한설정) 하는 에어드롭의 수정 형태인 락드롭 (Lockdrop)을 통해 론칭됩니다.
 lockdrop3: 락드롭은 2019년 초에 있을 예정이며, 참여자들에게 제네시스 블록의 토큰을 90 % 이상 배분합니다.
 lockdrop4: 락드롭에 참여하는 분들은 3 개월, 6 개월 또는 1 년 동안 ETH를 타임락 할 수 있습니다. 이후에 ETH의 100 %를 되돌려 받게 됩니다.
 lockdrop5: 이러한 광대한 토큰 배포는 보다 폭넓은 참여자 집단을 거버넌스 프로세스로 불러올 수 있습니다.
-lockdrop6: Lockdrop UI coming soon
+lockdrop6: Lockdrop UI 곧 제공 예정
 
 stack1: Edgeware 지분
 stack2: 효과적인 온체인 (on-chain) 거버넌스에는 DAO 및 경제적 메커니즘, 암호화 투표 체계, 협력을 위한 인터페이스와 같은 새로운 기술 구축이 필요합니다.
@@ -73,4 +73,4 @@ about10: Skillshare의 창립자
 about11: Ryan Zurrer
 about12: Web3 Foundation의 이사
 
-faq1: Frequently Asked Questions
+faq1: 자주 묻는 질문
