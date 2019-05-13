@@ -52,6 +52,7 @@ $(function() {
       // translate the page on load, if a language is selected
       if (hash && dictionaries[hash]) {
         translatePage('en', hash);
+
       }
 
       // find all DOM elements on the page with .i18n class, and translate them
@@ -73,6 +74,10 @@ $(function() {
             $elem.text(dictionaries[toLang][$elem.data('i18n-key')]);
           }
         });
+
+        // Find DOM Elements with .wp class and switch out href to correct link
+        $('.wp').attr('href', dictionaries[toLang]['wplink']);
+        console.log(dictionaries[toLang]['wplink']);
 
         if ($('.section.faq').length > 0) renderFAQ(faqs[hash || 'en']);
       }
