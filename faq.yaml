@@ -12,7 +12,9 @@
 
     - question: Have the lockdrop contracts been audited?
       answer: |
-        Yes, see the following Quantstamo audit of the Lockdrop Master Contract: https://arena-attachments.s3.amazonaws.com/4282493/a155dc84aa1dfba4cfd3dc6be1e1ebdc.pdf?1557965252
+        Yes, please see the following Quantstamp audit of the Lockdrop Master Contract:
+
+        https://arena-attachments.s3.amazonaws.com/4282493/a155dc84aa1dfba4cfd3dc6be1e1ebdc.pdf?1557965252
 
     - question: Why participate in the lockdrop?
       answer: |
