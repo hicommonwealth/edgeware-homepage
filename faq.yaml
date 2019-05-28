@@ -2,25 +2,27 @@
   items:
     - question: What's the lockdrop?
       answer: |
-        To align incentives, the Edgeware network will be launched with a
-        lockdrop of EDG tokens to Ether holders. A lockdrop happens where
-        token holders on one network timelock their tokens for a certain
-        amount of time — all executed within a smart contract. Ether
-        holders are able to lock their tokens for as short as 3 months or
-        as long as one year. Longer timelocks correspond to proportionally
-        more Edgeware tokens.
+        To align incentives, the Edgeware network will be launched
+        with a lockdrop of EDG tokens to Ether holders. A lockdrop
+        happens where token holders on one network timelock their
+        tokens for a certain amount of time using a smart
+        contract. For the Edgeware lockdrop, ETH holders may lock
+        their tokens for as short as 3 months or as long as one
+        year. Longer timelocks correspond to proportionally more
+        EDG received.
 
     - question: Have the lockdrop contracts been audited?
       answer: |
-        Yes, please see the following Quantstamp audit of the Lockdrop Master Contract:
+        Yes, please see the following Quantstamp audit of the Lockdrop
+        Master Contract:
 
         https://arena-attachments.s3.amazonaws.com/4282493/a155dc84aa1dfba4cfd3dc6be1e1ebdc.pdf?1557965252
 
     - question: Why participate in the lockdrop?
       answer: |
-        Many reasons! You can earn fees by validating, experiment with
-        building and launching WASM smart contracts, and vote on the
-        future of the network.
+        Many reasons! You can earn fees as a validator, deploy WASM
+        smart contracts to experiment with cutting-edge technology,
+        and vote on the future of the network.
 
     - question: Why become a validator?
       answer: |
@@ -32,8 +34,8 @@
     - question: How does signaling work?
       answer: |
         There is no bonus for signaling. Instead, there is a deduction of
-        40%. Signalers also do not receive their EDG tokens for a year
-        after Edgeware's network launch.
+        80%. Signalers receive 25% of their tokens upfront, and only
+        receive the remaining 75% a year after the network launches.
 
     - question: Do lockers and signalers pull from the same allocation pool?
       answer: |
@@ -57,26 +59,27 @@
         from the growth of complementary ecosystems.
 
         1. Lockdrop: The lockdrop will timelock ETH for up to a year
-        as people go "long ETH and EDG". Remember, only ETH holders can
-        participate! This adds another layer of utility to ETH and lowers
-        circulating supply, which will likely enhance the economic
-        security of Ethereum as it switches to a Casper-style consensus.
+        as people go "long ETH and EDG". Since only ETH holders can
+        participate, this supports the utility of ETH and lowers
+        circulating supply, enhancing economic security of Ethereum
+        as well as its role as a cryptocurrency.
 
         2. Bridging Networks: We think one of the first proposals that
-        the community should work on is a game-theoretically sound ETH-EDG
-        bridge. In the long term, this will allows fees and value to both
-        to ETH and EDG. With a bridge in place, we anticipate that
-        Ethereum dapps/protocols will be able to use Edgeware to scale,
-        much in the same way that Loom Network and other protocols help
-        scale Ethereum. Similarly, any tokens created on Edgeware can be
-        custodied and "moved" over to Ethereum via the bridge, where they
-        can be used in Ethereum's \#DeFi network (e.g. traded on 0x,
+        the community should work on is a game-theoretically sound
+        ETH-EDG bridge. In the long term, this will allow fees and
+        value to accrue to both ETH and EDG holders. With a bridge in
+        place, we anticipate that Ethereum dapps/protocols will be
+        able to use Edgeware to scale, in the same way that Loom
+        Network and other protocols help scale Ethereum. Similarly,
+        any tokens created on Edgeware can be custodied and "moved"
+        over to Ethereum via the bridge, where they can be used in
+        Ethereum's #DeFi ecosystem (e.g. traded on 0x and dy/dx,
         collateralized on Maker and Compound, and bundled using Set).
 
-        3. Accelerating Development: Edgeware is be a progressive
+        3. Accelerating Development: Edgeware is a progressive
         network that will incorporate scaling and governance tech at a
-        faster pace than Ethereum, but we expect most of these
-        improvements will be backported to Ethereum. We think the net
+        faster pace than Ethereum. We do expect most of these
+        improvements will be backported to Ethereum, and that the net
         effect will be substantially beneficial for both ecosystems. As
         one example, at Commonwealth we are building a multi-chain
         governance tool to make governance on ETH, EDG, or any other chain
@@ -86,11 +89,11 @@
     - question: Is Edgeware a fork of Ethereum?
       answer: |
         No, it's a new chain built on a completely different codebase
-        (Parity Substrate) with a different runtime and security model.
-        While Ethereum holders can participate in the lockdrop, EDG will
-        otherwise be an entirely separate network. However, we anticipate
-        that a bridge will be built for ETH-EDG so that both chains can
-        work together.
+        (Substrate) with a different runtime and security model.
+        While Ethereum holders can participate in the lockdrop, EDG
+        will otherwise be an entirely separate network. However, we
+        anticipate that a bridge will be built for ETH-EDG so that
+        both chains can work together.
 
     - question: How do DOTs interact with EDG?
       answer: |
@@ -98,17 +101,17 @@
         ("solochain"). This means that EDG will be used as the bonding and
         reward token for validators.
 
-        2. When Polkadot launches, Edgeware will be eligible to become a
-        parachain. DOTs are used to provide shared security and for
-        inter-parachain communication. If and when Edgeware becomes a
-        parachain, DOTs instead of EDG will be used as the reward for
-        validators. However, EDG will still be used for gas fees and
-        spam prevention.
+        2. When Polkadot launches, Edgeware will be eligible to become
+        a parachain. DOTs are used to provide shared security and for
+        inter-parachain communication in the Polkadot Network, so if
+        and when Edgeware becomes a parachain, DOT instead of EDG will
+        be used as the reward for validators instead. However, EDG
+        will still be used for gas fees, spam prevention, and bonding
+        for on-chain activities (e.g. governance).
 
-        3. Edgeware uses GRANDPA for finality, the same as consensus. In
-        the future, the network may vote to make Edgeware a relay chain,
-        just like Polkadot. In this case, EDG may again be used to provide
-        security for its own child parachains.
+        3. In the future, the network may vote to make Edgeware a
+        relay chain, just like Polkadot. In this case, EDG may be used
+        to provide security for child parachains.
 
     - question: What happens if Edgeware is no longer a parachain?
       answer: |
@@ -120,9 +123,9 @@
 
     - question: What is Commonwealth Labs' relationship to Edgeware post launch?
       answer: |
-        While we're spending time helping launch the chain, once Edgeware
-        launches, Commonwealth Labs will participate in governance just as
-        any other as a minority token holder.
+        While we're helping to launch the chain, after Edgeware
+        launches, Commonwealth Labs will participate in governance
+        just like any other minority token holder.
 
         We're building a governance UI, anonymous voting modules, and
         other governance tech that we will deploy on Edgeware and other
@@ -137,15 +140,15 @@
         minted, divisible up to 18 decimal places. Initially, inflation is
         set to 158 EDG per block.
 
-        This implies approximately 997,220,160 EDG in the first year, or
-        just under 20% inflation. The total amount of EDG minted will
-        remain the same year after year, causing the percentage
-        inflation to be disinflationary, with yearly inflation falling
-        to approximately 16.6% in the second year. Additionally, a
-        system-wide vote may further increase or decrease
-        inflation.
+        This implies approximately 997,220,160 EDG in the first year,
+        or just under 20%. The total amount of EDG minted will remain
+        constant, causing the percentage inflation per year to be
+        disinflationary, with yearly inflation falling to
+        approximately 16.6% in the second year. Additionally, a
+        system-wide vote may further increase or decrease inflation.
 
-        Half of the inflation will be voted upon by token holders for
+        Initially, half of the inflation will be allocated to the
+        on-chain treasury which may be upon by token holders for
         various uses.
 
     - question: What is Edgeware's consensus mechanism?
@@ -157,10 +160,10 @@
 
     - question: Who is in the initial validation set?
       answer: |
-        Lockdroppers will be able to specify if they want to be part of
-        the initial validation set. We hope several hundred individuals
-        will choose to do so, although the network will be secure with
-        a much smaller validator set.
+        Lockdroppers will be able to specify if they want to be part
+        of the initial validation set. We hope a substantial number
+        will choose to do so, although we expect the network will be
+        secure with a smaller validator set.
 
     - question: How does Edgeware use Parity Substrate?
       answer: |
