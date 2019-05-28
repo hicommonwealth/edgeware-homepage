@@ -52,7 +52,6 @@ $(function() {
       // translate the page on load, if a language is selected
       if (hash && dictionaries[hash]) {
         translatePage('en', hash);
-
       }
 
       // find all DOM elements on the page with .i18n class, and translate them
@@ -92,6 +91,8 @@ $(function() {
     $.get('/faq.yaml').then(function(result) {
       faqs = jsyaml.load(result);
       renderFAQ(faqs[hash || 'en']);
+    }).catch(function(err) {
+      console.error(err);
     });
   }
 
