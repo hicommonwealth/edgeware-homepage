@@ -308,6 +308,14 @@ a.overlay-close {
     position: relative;
     top: 30px;
 }
+.section.lead .lockdrop-copy-lead {
+    margin: 30px 0 6px;
+}
+.section.lead .lockdrop-button-lead {
+    margin-top: 10px;
+    width: 384px;
+    text-align: center;
+}
 
 /* feature list */
 .section.features {
@@ -668,6 +676,9 @@ a.overlay-close {
     .section.lead .email-updates {
         margin-top: -20px;
         margin-right: 0;
+    }
+    .section.lead .lockdrop-button-lead {
+        width: 100%;
     }
     .section.summary .row {
         margin: 0 -20px;
