@@ -17,7 +17,7 @@ $(function() {
       $('#ETHERSCAN_LINK').attr('href', `https://etherscan.io/address/${MAINNET_LOCKDROP}`);
     } else if (network === 'ropsten') {
       $('#LOCKDROP_CONTRACT_ADDRESS').val(ROPSTEN_LOCKDROP);
-      $('#ETHERSCAN_LINK').attr('href', `https://etherscan.io/address/${ROPSTEN_LOCKDROP}`);
+      $('#ETHERSCAN_LINK').attr('href', `https://ropsten.etherscan.io/address/${ROPSTEN_LOCKDROP}`);
     } else {
       $('#LOCKDROP_CONTRACT_ADDRESS').val(MAINNET_LOCKDROP);
       $('#ETHERSCAN_LINK').attr('href', `https://etherscan.io/address/${MAINNET_LOCKDROP}`);
