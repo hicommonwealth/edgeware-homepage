@@ -1,0 +1,331 @@
+/*
+ * FONTS
+ */
+@font-face {
+    font-family: 'ibm-plex-sans-webfont';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./fonts/otf/IBMPlexSans-Regular.eot') format('embedded-opentype'),
+         url('./fonts/woff/IBMPlexSans-Regular.woff') format('woff'),
+         url('./fonts/woff2/IBMPlexSans-Regular.woff2') format('woff2'),
+         url('./fonts/ttf/IBMPlexSans-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'ibm-plex-sans-webfont';
+    font-weight: 400;
+    font-style: italic;
+    src: url('./fonts/otf/IBMPlexSans-Italic.eot') format('embedded-opentype'),
+         url('./fonts/woff/IBMPlexSans-Italic.woff') format('woff'),
+         url('./fonts/woff2/IBMPlexSans-Italic.woff2') format('woff2'),
+         url('./fonts/ttf/IBMPlexSans-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'ibm-plex-sans-webfont';
+    font-weight: 500;
+    font-style: normal;
+    src: url('./fonts/otf/IBMPlexSans-Medium.eot') format('embedded-opentype'),
+         url('./fonts/woff/IBMPlexSans-Medium.woff') format('woff'),
+         url('./fonts/woff2/IBMPlexSans-Medium.woff2') format('woff2'),
+         url('./fonts/ttf/IBMPlexSans-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'ibm-plex-sans-webfont';
+    font-weight: 500;
+    font-style: italic;
+    src: url('./fonts/otf/IBMPlexSans-MediumItalic.eot') format('embedded-opentype'),
+         url('./fonts/woff/IBMPlexSans-MediumItalic.woff') format('woff'),
+         url('./fonts/woff2/IBMPlexSans-MediumItalic.woff2') format('woff2'),
+         url('./fonts/ttf/IBMPlexSans-MediumItalic.ttf') format('truetype');
+}
+
+/*
+ * GLOBALS
+ */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-size: 17px;
+    line-height: 1.45;
+    font-weight: 400;
+    font-family: ibm-plex-sans-webfont, sans-serif;
+    color: #222;
+}
+h1, h2, h3, h4 {
+    line-height: 1.15;
+}
+h2 {
+    font-size: 24px;
+    font-weight: 500;
+}
+h3 {
+    margin-top: 30px;
+}
+hr {
+    border-top: none;
+    border-bottom: 1px solid #ececec;
+    margin: 50px 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+a {
+    color: #111;
+}
+li {
+    margin: 12px 0;
+}
+pre, code {
+    font: 14.5px SF Mono, Roboto, Menlo, monospace;
+    line-height: 1.3;
+    background: #444;
+    color: #fff;
+    border-radius: 4px;
+}
+pre {
+    width: initial;
+    min-width: none;
+    padding: 14px 20px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+code {
+    padding: 4px 6px;
+    margin: 0 4px;
+}
+.button-text {
+    display: inline-block;
+    color: #aaa;
+    font-size: 18px;
+    margin-top: 30px;
+}
+input[type="text"],
+input[type="email"] {
+    height: 42px;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding-left: 14px;
+}
+input[type="text"]:not([readonly]):focus,
+input[type="email"]:not([readonly]):focus{
+    border-color: #08c;
+}
+::placeholder {
+    color: #bbb;
+}
+button,
+input[type="submit"] {
+    background: #e7e7e7;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-radius: 4px;
+    color: #111;
+    height: 42px;
+    padding: 8px 20px 8px;
+    line-height: 1;
+}
+button:active,
+input[type="submit"]:active {
+    background: #ddd;
+}
+
+/*
+ * PAGE LAYOUT
+ */
+.header {
+    background-image: url("../images/header.png");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 22px;
+}
+
+.footer {
+    background: #333;
+    padding: 20px 0 25px;
+    font-size: 16px;
+    text-align: center;
+}
+.footer,
+.footer a {
+    color: #fff;
+}
+.container {
+    margin: 0 auto;
+    max-width: 950px;
+    padding: 0 20px;
+}
+.container.body-container {
+    margin: 40px auto 80px;
+}
+.image {
+    display: block;
+    margin: 30px 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+/*
+ * COMPONENTS
+ */
+.wallet-explanation {
+    margin: 40px 0;
+    padding: 16px 22px;
+    background: #eee;
+    border-radius: 6px;
+}
+.form-field {
+    display: flex;
+    margin: 40px 0;
+}
+.form-field input[type="text"] + input[type="text"] {
+    margin: 10px 0;
+}
+.form-field.form-field-locking,
+.form-field.form-field-signaling {
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    margin: 0;
+}
+.body-container.locking .form-field.form-field-locking {
+    visibility: visible;
+    opacity: 1;
+    height: initial;
+    margin: 40px 0;
+}
+.body-container.signaling .form-field.form-field-signaling {
+    visibility: visible;
+    opacity: 1;
+    height: initial;
+    margin: 40px 0;
+}
+.form-field .form-left {
+    flex: 1;
+    width: 59%;
+    padding-right: 35px;
+}
+.form-field .explanation {
+    width: 41%;
+}
+.form-field .caption {
+    margin-bottom: 8px;
+}
+.form-field label {
+    display: block;
+    margin-bottom: 4px;
+}
+.form-field label input[type="radio"] {
+    position: relative;
+    top: -3px;
+    margin-right: 12px;
+}
+.form-field input[type="text"] {
+    display: block;
+    width: 100%;
+}
+.form-field input[type="text"][readonly] {
+    background: #f8f8f8;
+}
+.form-field .buttons {
+    margin: 14px 0 16px;
+}
+.form-field button {
+    display: block;
+    margin-bottom: 8px;
+}
+.form-field .explanation {
+    display: block;
+    color: #aaa;
+    padding-top: 30px;
+}
+.form-field .explanation p {
+    margin: 10px 0;
+}
+.form-field .explanation a {
+    color: #aaa;
+}
+.form-field .explanation a:hover {
+    color: #555;
+}
+.form-field .network-selector {
+    margin-top: 12px;
+}
+.form-field .network-selector label {
+    display: inline-block;
+    margin-right: 20px;
+}
+.participation-option {
+    display: none;
+}
+
+.form-field button.metamask,
+.form-field button.unlock {
+    background: #ec8118;
+    color: #fff;
+}
+.form-field button.mycrypto {
+    background: #007895;
+    color: #fff;
+}
+.form-field button.cli {
+    background: #333;
+    color: #fff;
+}
+
+.metamask-error,
+.metamask-success {
+    margin: 20px 0;
+}
+.metamask-error {
+    color: #d3363c;
+}
+.metamask-success {
+    color: #53a55b;
+}
+
+/*
+ * RESPONSIVE STYLES
+ */
+@media (max-width: 1000px) {
+    .container {
+        max-width: 800px;
+    }
+}
+@media (max-width: 880px) {
+    .wallet-explanation {
+        margin: 10px 0;
+    }
+    .container {
+        max-width: 640px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .container.body-container {
+        margin: 20px 0;
+    }
+    .form-field {
+        display: block;
+    }
+    .form-field .form-left,
+    .form-field .explanation {
+        width: 100%;
+        margin: 10px 0;
+        padding: 0;
+    }
+    .buttons button {
+        width: 100%;
+    }
+}
+@media (max-width: 680px) {
+    .container {
+        max-width: 100%;
+    }
+}

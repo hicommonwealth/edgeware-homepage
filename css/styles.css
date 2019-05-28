@@ -380,8 +380,6 @@ a.overlay-close {
 
 /* users + lockdrop */
 .section.about-users button {
-    opacity: 0.4;
-    pointer-events: none;
     margin-top: 30px;
 }
 .section.about-users {

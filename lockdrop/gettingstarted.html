@@ -1,0 +1,106 @@
+<html><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Edgeware Lockdrop</title>
+    <meta name="description" content="Interface for participating in the Edgeware lockdrop.">
+    <meta name="author" content="Commonwealth Labs">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/lock_styles.css">
+    <link rel="icon" type="../image/png" href="../images/favicon.png">
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        Edgeware Lockdrop
+      </div>
+    </div>
+    <div class="container body-container">
+      <h3>Creating an address</h3>
+      <div class="wallet-explanation">
+        To create an Edgeware mnemonic and keypair locally, follow
+        the steps below.  If you would rather create a keypair
+        online, visit
+        the <a href="https://polkadot.js.org/apps/#/accounts/create"
+               target="_blank">Polkadot UI</a> to create one.
+      </div>
+      <ul>
+        <li>
+          Install rust and cargo by running the following script
+          in a command shell
+          <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+        </li>
+        <li>
+          Execute the following script once cargo is installed
+          <pre>cargo install --force --git https://github.com/paritytech/substrate subkey</pre>
+        </li>
+        <li>
+          Create an account by running the following command
+          <pre>subkey generate</pre>
+          Save the output somewhere safe, it contains your secret mnemonic
+          to generate future keypairs.
+          <br/>
+          It should look like the following:
+          <pre>Phrase `welcome draft actor now search injury enhance cigar misery move december essay` is account:
+            Seed: 0xa2cc1ebe0a6cb0ae78311cd37156aac988e61c312d73cafe357cc2f1fd069e09
+            Public key (hex): 0xb2d1bda2d363cf25a26a9fb34ea314dc8981e378ca4797c52117f65731602826
+            Address (SS58): 5G7AgnBBNvdDYRVvcCYz95pMjGtS3ouWaq23Dcqe6rDjDuh7</pre>
+        </li>
+        <li>
+          Copy the Public key (hex) for use on the Edgeware Lockdrop homepage.
+        </li>
+        <li>
+          Note that if you intend to be a validator when the network
+          launches, you will need to generate three public keys, two
+          of which should be sr25519 keys as above:
+          <pre>subkey generate</pre>
+          One key should be an ed25519 key:
+          <pre>subkey generate -e</pre>
+        </li>
+      </ul>
+      <hr/>
+      <a name="unlocking"></a>
+      <h3>Unlocking</h3>
+      <div class="wallet-explanation">
+        To trigger unlocking of ETH stored in a user lockdrop
+        contract, wait until the locktime has expired, and send any
+        transaction to the user lockdrop contract's address.
+      </div>
+      <ul>
+        <li>
+          After sending a lock transaction, any ETH that was sent to
+          the <strong>master lockdrop contract</strong> will be
+          transferred into a <strong>user lockdrop contract</strong>.
+        </li>
+        <li>
+          You can find the user lockdrop contract by going to your
+          lock transaction on Etherscan, and looking for the contract
+          created by that transaction:
+          <a href="../images/unlocktx.png">
+            <img src="../images/unlocktx.png" class="image"/>
+          </a>
+        </li>
+        <li>
+          Create a transaction sending 0 ETH to that contract address,
+          from any address. As long as the lock has expired, funds
+          will be automatically released to the address that originally
+          locked them.
+        </li>
+      </ul>
+      <hr/>
+      <a name="testing"></a>
+      <h3>Testing on Ropsten</h3>
+      <ul>
+        <li>
+          The lockdrop contract deployed on Ropsten
+          at <code>0x111ee804560787E0bFC1898ed79DAe24F2457a04</code>
+          has shorter locktimes of 15min, 30min, and 60min, instead of
+          3, 6, and 12 months respectively.
+        </li>
+      </ul>
+      <br/>
+      <p><a href="/">&lsaquo; Back home</a>
+    </div>
+  </body>
+</html>
