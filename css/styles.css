@@ -91,6 +91,11 @@ input[type="email"]:focus{
 ::placeholder {
     color: #bbb;
 }
+a.btn {
+    display: inline-block;
+    text-decoration: none;
+}
+a.btn,
 button,
 input[type="submit"] {
     background: #e4457e;
@@ -103,6 +108,10 @@ input[type="submit"] {
     padding: 8px 20px 6px;
     line-height: 1;
 }
+a.btn {
+    padding-top: 12px;
+}
+a.btn:active,
 button:active,
 input[type="submit"]:active {
     background: #e681a5;
@@ -379,9 +388,7 @@ a.overlay-close {
 }
 
 /* users + lockdrop */
-.section.about-users button {
-    opacity: 0.4;
-    pointer-events: none;
+.section.about-users a.btn {
     margin-top: 30px;
 }
 .section.about-users {
