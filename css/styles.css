@@ -451,7 +451,7 @@ a.overlay-close {
     display: inline-block;
     margin: 0 0 35px;
     width: 100%;
-    word-break: break-all;
+    word-break: break-word;
 }
 .section.faq .item h3 {
     float: left;
