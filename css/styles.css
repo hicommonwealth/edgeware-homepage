@@ -163,6 +163,18 @@ a.overlay-close {
 /*
  * LAYOUT
  */
+.banner {
+    background: #525247;
+    /* background: #2bbe4e; */
+    color: #fff;
+    padding: 18px 0 18px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.4;
+}
+.banner a {
+    color: #fff;
+}
 .container {
     margin: 0 auto;
     max-width: 960px;
