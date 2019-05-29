@@ -193,7 +193,7 @@
           <pre id="LOCKDROP_MYCRYPTO_VALUE"></pre>
           <h3>Step 6.</h3>
           <p>
-            Uncheck 'Automatically Calculate Gas Limit' and set your gas limit to 100000.
+            Uncheck 'Automatically Calculate Gas Limit' and set your gas limit to 150000.
           </p>
           <p>
             Sign and send the transaction.
@@ -217,9 +217,9 @@
           <h3>Examples</h3>
           <p>
             Locking 0.5 ETH for 3 months, as a validator at network launch, on mainnet
-            <pre>node ./scripts/lockdrop.js --remoteUrl https://mainnet.infura.io --lock --lockLength 3 --lockValue 0.5 --edgeAddress $EDGEWARE_SR25519_PUBLIC_KEY --isValidator</pre>
+            <pre>node ./scripts/lockdrop.js --remoteUrl https://mainnet.infura.io --lock --lockLength 3 --lockValue 0.5 --isValidator</pre>
             Signaling from a specified contract with a specified nonce, on mainnet
-            <pre>node ./scripts/lockdrop.js --remoteUrl https://mainnet.infura.io --signal $FROM_CONTRACT --nonce $NONCE_OF_SIGNAL_CONTRACT --edgeAddress $EDGEWARE_SR25519_PUBLIC_KEY</pre>
+            <pre>node ./scripts/lockdrop.js --remoteUrl https://mainnet.infura.io --signal $FROM_CONTRACT --nonce $NONCE_OF_SIGNAL_CONTRACT</pre>
           </p>
         </div>
       </div>

@@ -3,11 +3,10 @@ const MAINNET_LOCKDROP = '0x1b75b90e60070d37cfa9d87affd124bb345bf70a';
 const ROPSTEN_LOCKDROP = '0x111ee804560787E0bFC1898ed79DAe24F2457a04';
 const LOCKDROP_ABI = JSON.stringify([{"constant":true,"inputs":[],"name":"LOCK_START_TIME","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"LOCK_END_TIME","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"LOCK_DROP_PERIOD","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_origin","type":"address"},{"name":"_nonce","type":"uint32"}],"name":"addressFrom","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"contractAddr","type":"address"},{"name":"nonce","type":"uint32"},{"name":"edgewareAddr","type":"bytes"}],"name":"signal","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"term","type":"uint8"},{"name":"edgewareAddr","type":"bytes"},{"name":"isValidator","type":"bool"}],"name":"lock","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[{"name":"startTime","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":false,"name":"eth","type":"uint256"},{"indexed":false,"name":"lockAddr","type":"address"},{"indexed":false,"name":"term","type":"uint8"},{"indexed":false,"name":"edgewareAddr","type":"bytes"},{"indexed":false,"name":"isValidator","type":"bool"},{"indexed":false,"name":"time","type":"uint256"}],"name":"Locked","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"contractAddr","type":"address"},{"indexed":false,"name":"edgewareAddr","type":"bytes"},{"indexed":false,"name":"time","type":"uint256"}],"name":"Signaled","type":"event"}]);
 
-$(function() {
-  // Remove target="_blank" since it breaks links for Toshi/Coinbase Wallet
-  if (window.ethereum.isToshi || window.ethereum.isCoinbaseWallet) {
-    $('[target="_blank"]').removeAttr('target');
-  }
+$(async function() {
+  // Setup ethereum connection and web3 provider if possible
+  await enableInjectedWeb3EthereumConnection();
+  setupWeb3Provider();
 
   $('.publickey-input').on('blur', function(e) {
     if (e.target.value !== '' && e.target.value.length !== 64 && e.target.value.length !== 66) {
@@ -62,9 +61,6 @@ $(function() {
     if (!getPublicKey()) {
       return;
     }
-    // Setup ethereum connection and web3 provider
-    await enableInjectedWeb3EthereumConnection();
-    setupInjectedWeb3Provider();
 
     // Grab form data
     let { returnTransaction, params, failure, reason } = await configureTransaction(true);
@@ -94,8 +90,7 @@ $(function() {
     if (!getPublicKey()) {
       return;
     }
-    setupInfuraWeb3Provider();
-    let { returnTransaction, params, failure, reason, args } = await configureTransaction(false);
+    let { failure, reason, args } = await configureTransaction(false);
     if (failure) {
       alert(reason);
       return;
@@ -311,26 +306,23 @@ function validateSignalingContractAddress(contractAddress, nonce) {
 /**
  * Setup web3 provider using InjectedWeb3's injected providers
  */
-function setupInjectedWeb3Provider() {
+function setupWeb3Provider() {
+  if (typeof window.ethereum !== 'undefined') {
+    // Remove target="_blank" since it breaks links for Toshi/Coinbase Wallet
+    if (window.ethereum.isToshi || window.ethereum.isCoinbaseWallet) {
+      $('[target="_blank"]').removeAttr('target');
+    }
+  }
   // Setup web3 provider
   if (typeof window.ethereum !== 'undefined' || (typeof window.web3 !== 'undefined')) {
     // Web3 browser user detected. You can now use the provider.
     provider = window.ethereum || window.web3.currentProvider;
+  } else {
+    // If no provider is found default to public INFURA gateway
+    web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io'));
   }
 
   web3 = new window.Web3(provider);
-}
-
-/**
- * Setup web3 provider using Infura Public Gateway
- */
-function setupInfuraWeb3Provider() {
-  if (typeof web3 !== 'undefined') {
-    web3 = new Web3(web3.currentProvider);
-  } else {
-    // Set the provider you want from Web3.providers
-    web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io'));
-  }
 }
 
 /**
@@ -341,6 +333,6 @@ async function enableInjectedWeb3EthereumConnection() {
     await ethereum.enable();
   } catch (error) {
     // Handle error. Likely the user rejected the login:
-    alert('Could not find Web3 provider/Ethereum wallet');
+    alert('Could not find Web3 provider/Ethereum wallet, defaulting to INFURA\n\nNote, you will not be able to use the Injected Web3 option.');
   }
 }
