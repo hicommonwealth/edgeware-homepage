@@ -1,0 +1,26 @@
+/*
+ * Additional styling for participation stats
+ */
+
+.charts {
+    display: flex;
+    width: 100%;
+    padding: 20px 0 0;
+    border-radius: 6px;
+    border: 2px solid #eee;
+    margin: 16px 0;
+    min-height: 240px;
+}
+
+#CHARTS_LOADING {
+    color: #c0c0c0;
+    text-align: center;
+    width: 100%;
+    margin-top: 84px;
+}
+
+#ETH_CHART, #EFFECTIVE_ETH_CHART {
+    flex: 1;
+    max-width: 50%;
+    overflow: hidden;
+}

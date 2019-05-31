@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Edgeware Lockdrop</title>
+    <meta name="description" content="Interface for participating in the Edgeware lockdrop.">
+    <meta name="author" content="Commonwealth Labs">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stats.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
+    <script src="js/stats.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        Edgeware Lockdrop
+      </div>
+    </div>
+    <div class="container body-container">
+      <div class="form-field">
+        <div class="form-left">
+          <div class="caption">Lockdrop contract</div>
+          <input id="LOCKDROP_CONTRACT_ADDRESS" type="text" value="0x1b75b90e60070d37cfa9d87affd124bb345bf70a" readonly></input>
+          <div class="network-selector">
+            <label><input type="radio" name="network" value="mainnet" checked></input>Mainnet</label>
+            <label><input type="radio" name="network" value="ropsten"></input>Ropsten (<a href="gettingstarted.html#testing">?</a>)</label>
+          </div>
+        </div>
+        <div class="explanation">
+          You can view the latest transactions on <a id="ETHERSCAN_LINK"
+          href="https://etherscan.io/address/0x1b75b90e60070d37cfa9d87affd124bb345bf70a"
+          target="_blank">Etherscan</a>.
+        </div>
+      </div>
+
+      <div class="caption">Participation statistics</div>
+      <div class="charts">
+        <div id="CHARTS_LOADING"></div>
+        <div id="ETH_CHART"></div>
+        <div id="EFFECTIVE_ETH_CHART"></div>
+      </div>
+
+      <div class="form-field">
+        <div class="form-left">
+          <div class="caption">Find participant address</div>
+          <input id="LOCKDROP_PARTICIPANT_ADDRESS" type="text" placeholder="Enter an ETH address: 0x1234..."></input>
+        </div>
+        <div class="explanation">
+          This will fetch all locks and signal actions from the input address
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="LOCK_LOOKUP_BTN">Lookup</button>
+      </div>
+      <div>
+        <ul id="LOCK_LOOKUP_RESULTS"></ul>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        &copy; 2019 <span class="i18n">Commonwealth Labs</span>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+  </body>
+</html>
