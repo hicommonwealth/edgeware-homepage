@@ -265,6 +265,13 @@ input[type="submit"]:active {
 .participation-option {
     display: none;
 }
+.ropsten-address-warning {
+    padding: 10px 22px;
+    background: #ec8118;
+    color: #fff;
+    border-radius: 4px;
+    display: none;
+}
 
 .form-field button.injectedWeb3,
 .form-field button.unlock {
