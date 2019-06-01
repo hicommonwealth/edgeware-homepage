@@ -12,7 +12,6 @@ const AUG_15TH_UTC = 1565827200;
 const AUG_30TH_UTC = 1567123200;
 
 $(async function() {
-  setupWeb3Provider();
   $('input[name="network"]').change(async function(e) {
     $('#CHARTS_LOADING').text('Loading...');
     let network = $('input[name="network"]:checked').val();
@@ -45,7 +44,11 @@ $(async function() {
     }
     let lockdropContractAddress = $('#LOCKDROP_CONTRACT_ADDRESS').val();
     const json = await $.getJSON('Lockdrop.json');
+    setupWeb3Provider();
     const contract = new web3.eth.Contract(json.abi, lockdropContractAddress);
+    $('#EFFECTIVE_ETH_CHART').empty();
+    $('#ETH_CHART').empty();
+
     const lockEvents = await getLocks(contract, addr);
     const signalEvents = await getSignals(contract, addr);
     const now = await getCurrentTimestamp();
@@ -113,7 +116,7 @@ async function drawChart() {
     summary = undefined;
   }
   if (!summary) {
-    $('#CHARTS_LOADING').show().text('No data');
+    $('#CHARTS_LOADING').show().text('No data - You may be over the API limit. Wait 15 seconds and try again.');
     $('#EFFECTIVE_ETH_CHART').empty();
     $('#ETH_CHART').empty();
     return;
@@ -125,10 +128,19 @@ async function drawChart() {
     ['Signaled ETH', summary.totalETHSignaled],
   ]);
 
+  $('.total-amount span').text((summary.totalETHLocked + summary.totalETHSignaled).toFixed(2));
+  $('.locked-amount span').text(summary.totalETHLocked.toFixed(2));
+  $('.signaled-amount span').text(summary.totalETHSignaled.toFixed(2));
+
+  const totalEffectiveETH = summary.totalEffectiveETHLocked + summary.totalEffectiveETHSignaled;
+  const lockersEDG = 4500000000 * summary.totalEffectiveETHLocked / totalEffectiveETH;
+  const signalersEDG = 4500000000 * summary.totalEffectiveETHSignaled / totalEffectiveETH;
+  const foundersEDG = 500000000;
   var effectiveData = google.visualization.arrayToDataTable([
     ['Type', 'Lock or signal action'],
-    ['Lockers', summary.totalEffectiveETHLocked],
-    ['Signalers', summary.totalEffectiveETHSignaled],
+    ['Lockers', lockersEDG],
+    ['Signalers', signalersEDG],
+    ['Other', foundersEDG],
   ]);
 
   // Optional; add a title and set the width and height of the chart
@@ -165,14 +177,8 @@ function isHex(inputString) {
  */
 function setupWeb3Provider() {
   // Setup web3 provider
-  if (typeof window.ethereum !== 'undefined' || (typeof window.web3 !== 'undefined')) {
-    // Web3 browser user detected. You can now use the provider.
-    provider = window.ethereum || window.web3.currentProvider;
-  } else {
-    let network = $('input[name="network"]:checked').val();
-    provider = new Web3.providers.HttpProvider(`https://${network}.infura.io`);
-  }
-
+  let network = $('input[name="network"]:checked').val();
+  provider = new Web3.providers.HttpProvider(`https://${network}.infura.io`);
   web3 = new window.Web3(provider);
 }
 
@@ -228,6 +234,10 @@ const getCurrentTimestamp = async () => {
 const getParticipationSummary = async () => {
   let lockdropContractAddress = $('#LOCKDROP_CONTRACT_ADDRESS').val();
   const json = await $.getJSON('Lockdrop.json');
+  setupWeb3Provider();
+  $('#EFFECTIVE_ETH_CHART').empty();
+  $('#ETH_CHART').empty();
+
   const contract = new web3.eth.Contract(json.abi, lockdropContractAddress);
   // Get balances of the lockdrop
   let { totalETHLocked, totalEffectiveETHLocked, numLocks } = await calculateEffectiveLocks(contract);

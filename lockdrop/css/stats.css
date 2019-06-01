@@ -24,3 +24,10 @@
     max-width: 50%;
     overflow: hidden;
 }
+
+.numbers {
+    display: flex;
+}
+.numbers > * {
+    flex: 1;
+}
