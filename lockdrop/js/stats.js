@@ -143,6 +143,20 @@ async function drawChart() {
     ['Other', foundersEDG],
   ]);
 
+  var lockData = google.visualization.arrayToDataTable([
+    ['EDG pubkey', 'ETH locked'],
+    ...Object.keys(summary.locks).map(key => {
+      return [key, Number(web3.utils.fromWei(summary.locks[key].lockAmt, 'ether'))];
+    })
+  ]);
+
+  var validatingLockData = google.visualization.arrayToDataTable([
+    ['Validating EDG pubkeys', 'ETH locked'],
+    ...Object.keys(summary.validatingLocks).map(key => {
+      return [key, Number(web3.utils.fromWei(summary.locks[key].lockAmt, 'ether'))];
+    })
+  ]);
+
   // Optional; add a title and set the width and height of the chart
   var width = $(window).width() > 600 ? 550 : $(window).width() - 100;
   var vanillaOptions = {
@@ -156,12 +170,30 @@ async function drawChart() {
     height: 400,
   };
 
+  var lockDistributionOptions = {
+    title: 'Lock distribution by EDG public keys',
+    width: width,
+    'height':400,
+  };
+
+  var validatingLockDistributionOptions = {
+    title: 'Validating Lock distribution by EDG public keys',
+    width: width,
+    height: 400,
+  };
+
   // Display the chart inside the <div> element with id="piechart"
   var vanillaChart = new google.visualization.PieChart(document.getElementById('ETH_CHART'));
   vanillaChart.draw(vanillaData, vanillaOptions);
 
   var effectiveChart = new google.visualization.PieChart(document.getElementById('EFFECTIVE_ETH_CHART'));
   effectiveChart.draw(effectiveData, effectiveOptions);
+
+  var lockDistribution = new google.visualization.PieChart(document.getElementById('LOCK_DISTRIBUTION'));
+  lockDistribution.draw(lockData, lockDistributionOptions);
+
+  var validatingLockDistribution = new google.visualization.PieChart(document.getElementById('VALIDATING_LOCK_DISTRIBUTION'));
+  validatingLockDistribution.draw(validatingLockData, validatingLockDistributionOptions);
   $('#CHARTS_LOADING').hide();
 }
 
@@ -240,13 +272,14 @@ const getParticipationSummary = async () => {
 
   const contract = new web3.eth.Contract(json.abi, lockdropContractAddress);
   // Get balances of the lockdrop
-  let { totalETHLocked, totalEffectiveETHLocked, numLocks } = await calculateEffectiveLocks(contract);
-  let { totalETHSignaled, totalEffectiveETHSignaled, numSignals } = await calculateEffectiveSignals(contract);
+  let { locks, validatingLocks, totalETHLocked, totalEffectiveETHLocked, numLocks } = await calculateEffectiveLocks(contract);
+  let { signals, totalETHSignaled, totalEffectiveETHSignaled, numSignals } = await calculateEffectiveSignals(contract);
   let totalETH = totalETHLocked.add(totalETHSignaled)
   let totalEffectiveETH = totalEffectiveETHLocked.add(totalEffectiveETHSignaled);
   let avgLock = totalETHLocked.div(web3.utils.toBN(numLocks));
   let avgSignal = totalETHSignaled.div(web3.utils.toBN(numSignals));
   return {
+    locks, validatingLocks, signals,
     totalETHLocked: Number(web3.utils.fromWei(totalETHLocked, 'ether')),
     totalEffectiveETHLocked: Number(web3.utils.fromWei(totalEffectiveETHLocked, 'ether')),
     totalETHSignaled: Number(web3.utils.fromWei(totalETHSignaled, 'ether')),
@@ -273,6 +306,9 @@ const getTotalSignaledBalance = async (lockdropContract) => {
 const calculateEffectiveLocks = async (lockdropContract) => {
   let totalETHLocked = web3.utils.toBN(0);
   let totalEffectiveETHLocked = web3.utils.toBN(0);
+  const locks = {};
+  const validatingLocks = {};
+
   // Get all lock events
   const lockEvents = await lockdropContract.getPastEvents('Locked', {
     fromBlock: 0,
@@ -280,22 +316,53 @@ const calculateEffectiveLocks = async (lockdropContract) => {
   });
 
   // Compatibility with all contract formats
-  let lockdropStartTime = await lockdropContract.methods.LOCK_START_TIME().call();
-
+  let lockdropStartTime = (await lockdropContract.methods.LOCK_START_TIME().call());
   // Add balances and effective values to total
   lockEvents.forEach((event) => {
     const data = event.returnValues;
     let value = getEffectiveValue(data.eth, data.term, data.time, lockdropStartTime, totalETHLocked);
     totalETHLocked = totalETHLocked.add(web3.utils.toBN(data.eth));
     totalEffectiveETHLocked = totalEffectiveETHLocked.add(value);
+
+    // Add all validators to a separate collection to do validator election over later
+    if (data.isValidator) {
+      if (data.edgewareAddr in validatingLocks) {
+        validatingLocks[data.edgewareAddr] = {
+          lockAmt: web3.utils.toBN(data.eth).add(web3.utils.toBN(validatingLocks[data.edgewareAddr].lockAmt)).toString(),
+          effectiveValue: web3.utils.toBN(validatingLocks[data.edgewareAddr].effectiveValue).add(value).toString(),
+          lockAddrs: [data.lockAddr, ...validatingLocks[data.edgewareAddr].lockAddrs],
+        };
+      } else {
+        validatingLocks[data.edgewareAddr] = {
+          lockAmt: web3.utils.toBN(data.eth).toString(),
+          effectiveValue: value.toString(),
+          lockAddrs: [data.lockAddr],
+        };
+      } 
+    }
+    // Add all lockers to a collection for data processing
+    if (data.edgewareAddr in locks) {
+      locks[data.edgewareAddr] = {
+        lockAmt: web3.utils.toBN(data.eth).add(web3.utils.toBN(locks[data.edgewareAddr].lockAmt)).toString(),
+        effectiveValue: web3.utils.toBN(locks[data.edgewareAddr].effectiveValue).add(value).toString(),
+        lockAddrs: [data.lockAddr, ...locks[data.edgewareAddr].lockAddrs],
+      };
+    } else {
+      locks[data.edgewareAddr] = {
+        lockAmt: web3.utils.toBN(data.eth).toString(),
+        effectiveValue: value.toString(),
+        lockAddrs: [data.lockAddr],
+      };
+    }
   });
   // Return validating locks, locks, and total ETH locked
-  return { totalETHLocked, totalEffectiveETHLocked, numLocks: lockEvents.length };
+  return { locks, validatingLocks, totalETHLocked, totalEffectiveETHLocked, numLocks: lockEvents.length };
 };
 
 const calculateEffectiveSignals = async (lockdropContract, blockNumber=null) => {
   let totalETHSignaled = web3.utils.toBN(0);
   let totalEffectiveETHSignaled = web3.utils.toBN(0);
+  const signals = {};
   const signalEvents = await lockdropContract.getPastEvents('Signaled', {
     fromBlock: 0,
     toBlock: 'latest',
@@ -315,12 +382,25 @@ const calculateEffectiveSignals = async (lockdropContract, blockNumber=null) => 
     // Add value to total signaled ETH
     totalETHSignaled = totalETHSignaled.add(web3.utils.toBN(balance));
     totalEffectiveETHSignaled = totalEffectiveETHSignaled.add(value);
+
+    // Add all lockers to a collection for data processing
+    if (data.edgewareAddr in signals) {
+      signals[data.edgewareAddr] = {
+        signalAmt: web3.utils.toBN(balance).add(web3.utils.toBN(signals[data.edgewareAddr].signalAmt)).toString(),
+        effectiveValue: web3.utils.toBN(signals[data.edgewareAddr].effectiveValue).add(value).toString(),
+      };
+    } else {
+      signals[data.edgewareAddr] = {
+        signalAmt: web3.utils.toBN(balance).toString(),
+        effectiveValue: value.toString(),
+      };
+    }
   });
 
   // Resolve promises to ensure all inner async functions have finished
   await Promise.all(promises);
   // Return signals and total ETH signaled
-  return { totalETHSignaled, totalEffectiveETHSignaled, numSignals: signalEvents.length };
+  return { signals, totalETHSignaled, totalEffectiveETHSignaled, numSignals: signalEvents.length };
 }
 
 function getEffectiveValue(ethAmount, term, lockTime, lockStart, totalETH) {
