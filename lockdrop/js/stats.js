@@ -270,7 +270,8 @@ const calculateEffectiveLocks = async (lockdropContract) => {
   });
 
   // Compatibility with all contract formats
-  let lockdropStartTime = (await lockdropContract.methods.LOCK_START_TIME().call());
+  let lockdropStartTime = await lockdropContract.methods.LOCK_START_TIME().call();
+
   // Add balances and effective values to total
   lockEvents.forEach((event) => {
     const data = event.returnValues;
@@ -320,7 +321,7 @@ function getEffectiveValue(ethAmount, term, lockTime, lockStart, totalETH) {
     lockTime = web3.utils.toBN(lockTime);
     lockStart = web3.utils.toBN(lockStart);
     totalETH = web3.utils.toBN(totalETH);
-    additiveBonus = getAdditiveBonus(lockTime, lockStart, totalETH);
+    additiveBonus = getAdditiveBonus(lockTime, lockStart);
   }
 
   if (term == '0') {
@@ -333,67 +334,33 @@ function getEffectiveValue(ethAmount, term, lockTime, lockStart, totalETH) {
     // twelve month term yields 120% bonus
     return ethAmount.mul(web3.utils.toBN(220).add(additiveBonus)).div(web3.utils.toBN(100));
   } else if (term == 'signaling') {
-    // 80% deduction
+    // signaling yields 80% deduction
     return ethAmount.mul(web3.utils.toBN(20)).div(web3.utils.toBN(100));
   } else {
     // invalid term
+    console.error('Found invalid term');
     return web3.utils.toBN(0);
   }
 }
 
-const getAdditiveBonus = (lockTime, lockStart, currentTotalETH) => {
+const getAdditiveBonus = (lockTime, lockStart) => {
   if (!lockStart.eq(web3.utils.toBN(JUNE_1ST_UTC))) {
     return web3.utils.toBN(0);
   } else {
     if (web3.utils.toBN(lockTime).lte(web3.utils.toBN(JUNE_16TH_UTC))) {
-      return conditionalSwap(web3.utils.toBN(50), currentTotalETH);
+      return web3.utils.toBN(50);
     } else if (web3.utils.toBN(lockTime).lte(web3.utils.toBN(JULY_1ST_UTC))) {
-      return conditionalSwap(web3.utils.toBN(40), currentTotalETH);
+      return web3.utils.toBN(40);
     } else if (web3.utils.toBN(lockTime).lte(web3.utils.toBN(JULY_16TH_UTC))) {
-      return conditionalSwap(web3.utils.toBN(30), currentTotalETH);
+      return web3.utils.toBN(30);
     } else if (web3.utils.toBN(lockTime).lte(web3.utils.toBN(JULY_31ST_UTC))) {
-      return conditionalSwap(web3.utils.toBN(20), currentTotalETH);
+      return web3.utils.toBN(20);
     } else if (web3.utils.toBN(lockTime).lte(web3.utils.toBN(AUG_15TH_UTC))) {
-      return conditionalSwap(web3.utils.toBN(10), currentTotalETH);
+      return web3.utils.toBN(10);
     } else if (web3.utils.toBN(lockTime).lte(web3.utils.toBN(AUG_30TH_UTC))) {
       return web3.utils.toBN(0);
     } else {
       return web3.utils.toBN(0);
     }
-  }
-}
-
-const conditionalSwap = (bonus, currentTotalETH) => {
-  let below200K = (web3.utils.toBN(currentTotalETH).lt(web3.utils.toBN(toWei('200000', 'ether'))));
-  let below400K = (web3.utils.toBN(currentTotalETH).lt(web3.utils.toBN(toWei('400000', 'ether'))));
-  let below700K = (web3.utils.toBN(currentTotalETH).lt(web3.utils.toBN(toWei('700000', 'ether'))));
-  let below1100K = (web3.utils.toBN(currentTotalETH).lt(web3.utils.toBN(toWei('1100000', 'ether'))));
-  let below1600K = (web3.utils.toBN(currentTotalETH).lt(web3.utils.toBN(toWei('1600000', 'ether'))));
-  let below2200K = (web3.utils.toBN(currentTotalETH).lt(web3.utils.toBN(toWei('2200000', 'ether'))));
-  // For each condition, we take the minimum of the two bonuses
-  if (below200K) {
-    return (bonus.lte(web3.utils.toBN(50)))
-      ? bonus
-      : web3.utils.toBN(50);
-  } else if (below400K) {
-    return (bonus.lte(web3.utils.toBN(40)))
-      ? bonus
-      : web3.utils.toBN(40);
-  } else if (below700K) {
-    return (bonus.lte(web3.utils.toBN(30)))
-      ? bonus
-      : web3.utils.toBN(30);
-  } else if (below1100K) {
-    return (bonus.lte(web3.utils.toBN(20)))
-      ? bonus
-      : web3.utils.toBN(20);
-  } else if (below1600K) {
-    return (bonus.lte(web3.utils.toBN(10)))
-      ? bonus
-      : web3.utils.toBN(10);
-  } else if (below2200K) {
-    return web3.utils.toBN(0);
-  } else {
-    return web3.utils.toBN(0);
   }
 }
