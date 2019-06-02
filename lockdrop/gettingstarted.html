@@ -21,8 +21,7 @@
       <div class="wallet-explanation">
         To create an Edgeware mnemonic and keypair locally, follow the
         steps below.  If you would rather create a keypair online,
-        visit the <a href="https://edgewa.re/keygen/index.html"
-        target="_blank">key generator</a>.
+        visit the <a href="https://edgewa.re/keygen/index.html">key generator</a>.
       </div>
       <ul>
         <li>
@@ -82,7 +81,12 @@
           Create a transaction sending 0 ETH to that contract address,
           from any address. As long as the lock has expired, funds
           will be automatically released to the address that originally
-          locked them.
+          locked them. (The original locking address is hardcoded in
+          the generated lock contract.)
+        </li>
+        <li>
+          We will also provide a user interface for unlocking as we
+          get closer to the first lock expirations.
         </li>
       </ul>
       <hr/>
