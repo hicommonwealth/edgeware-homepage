@@ -80,8 +80,10 @@ $(async function() {
           .text(err.message);
       } else {
         console.log(txHash);
+        $('.participation-option.injectedWeb3 .injectedWeb3-prompt').hide()
         $('.participation-option.injectedWeb3 .injectedWeb3-success').show()
           .text('Success! Transaction submitted');
+        $('.participation-option.injectedWeb3 .congratulations').show()
       }
     });
     $('html, body').animate({ scrollTop: $('.participation-options').position().top - 50 }, 500);

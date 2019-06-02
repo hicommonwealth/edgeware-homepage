@@ -262,17 +262,6 @@ input[type="submit"]:active {
     display: inline-block;
     margin-right: 20px;
 }
-.participation-option {
-    display: none;
-}
-.ropsten-address-warning {
-    padding: 10px 22px;
-    background: #ec8118;
-    color: #fff;
-    border-radius: 4px;
-    display: none;
-}
-
 .form-field button.injectedWeb3,
 .form-field button.unlock {
     background: #ec8118;
@@ -287,6 +276,17 @@ input[type="submit"]:active {
     color: #fff;
 }
 
+.participation-option {
+    display: none;
+}
+.ropsten-address-warning {
+    padding: 10px 22px;
+    background: #ec8118;
+    color: #fff;
+    border-radius: 4px;
+    display: none;
+}
+
 .injectedWeb3-error,
 .injectedWeb3-success {
     margin: 20px 0;
@@ -296,6 +296,22 @@ input[type="submit"]:active {
 }
 .injectedWeb3-success {
     color: #53a55b;
+}
+
+.congratulations {
+    margin-top: 50px;
+}
+.share-tweet {
+    display: inline-block;
+    padding: 7px 15px;
+    margin-top: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    background: #1ca1f2;
+}
+.share-tweet:hover {
+    opacity: 0.9;
 }
 
 /*
