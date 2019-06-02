@@ -165,13 +165,14 @@ async function configureTransaction(isInjectedWeb3) {
   const json = await $.getJSON('Lockdrop.json');
   const contract = new web3.eth.Contract(json.abi, lockdropContractAddress);
 
-  let userSelectedNetwork = $('input[name="network"]:checked').val();
-  let walletSelectedNetwork = await web3.eth.net.getNetworkType();
-  if (isInjectedWeb3 && walletSelectedNetwork === 'main' && userSelectedNetwork === 'ropsten') {
-    alert('You are interacting with the Ropsten testnet contract. Please switch your wallet to Ropsten')
-    return;
-  }
-  if (!isInjectedWeb3) {
+  const userSelectedNetwork = $('input[name="network"]:checked').val();
+  if (isInjectedWeb3) {
+    const walletSelectedNetwork = await web3.eth.net.getNetworkType();
+    if (walletSelectedNetwork === 'main' && userSelectedNetwork === 'ropsten') {
+      alert('You are interacting with the Ropsten testnet contract. Please switch your wallet to Ropsten')
+      return;
+    }
+  } else {
     if (userSelectedNetwork === 'ropsten') {
       $('.ropsten-address-warning').show();
     } else {
