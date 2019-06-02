@@ -31,3 +31,12 @@
 .numbers > * {
     flex: 1;
 }
+
+@media (max-width: 680px) {
+    .charts {
+        display: block
+    }
+    #ETH_CHART, #EFFECTIVE_ETH_CHART {
+        max-width: 100%;
+    }
+}
