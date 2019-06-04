@@ -4,9 +4,12 @@ const ROPSTEN_LOCKDROP = '0x111ee804560787E0bFC1898ed79DAe24F2457a04';
 const LOCKDROP_ABI = JSON.stringify([{"constant":true,"inputs":[],"name":"LOCK_START_TIME","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"LOCK_END_TIME","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"LOCK_DROP_PERIOD","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_origin","type":"address"},{"name":"_nonce","type":"uint32"}],"name":"addressFrom","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"contractAddr","type":"address"},{"name":"nonce","type":"uint32"},{"name":"edgewareAddr","type":"bytes"}],"name":"signal","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"term","type":"uint8"},{"name":"edgewareAddr","type":"bytes"},{"name":"isValidator","type":"bool"}],"name":"lock","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[{"name":"startTime","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":false,"name":"eth","type":"uint256"},{"indexed":false,"name":"lockAddr","type":"address"},{"indexed":false,"name":"term","type":"uint8"},{"indexed":false,"name":"edgewareAddr","type":"bytes"},{"indexed":false,"name":"isValidator","type":"bool"},{"indexed":false,"name":"time","type":"uint256"}],"name":"Locked","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"contractAddr","type":"address"},{"indexed":false,"name":"edgewareAddr","type":"bytes"},{"indexed":false,"name":"time","type":"uint256"}],"name":"Signaled","type":"event"}]);
 
 $(async function() {
-  // Setup ethereum connection and web3 provider if possible
-  await enableInjectedWeb3EthereumConnection();
-  setupWeb3Provider();
+  if (typeof window.ethereum !== 'undefined') {
+    // Remove target="_blank" since it breaks links for Toshi/Coinbase Wallet
+    if (window.ethereum.isToshi || window.ethereum.isCoinbaseWallet) {
+      $('[target="_blank"]').removeAttr('target');
+    }
+  }
 
   $('.publickey-input').on('blur', function(e) {
     if (e.target.value !== '' && e.target.value.length !== 64 && e.target.value.length !== 66) {
@@ -62,6 +65,10 @@ $(async function() {
       return;
     }
 
+    // Setup ethereum connection and web3 provider if possible
+    await enableInjectedWeb3EthereumConnection();
+    setupWeb3Provider();
+
     // Grab form data
     let { returnTransaction, params, failure, reason } = await configureTransaction(true);
     if (failure) {
@@ -92,6 +99,11 @@ $(async function() {
     if (!getPublicKey()) {
       return;
     }
+
+    // Setup ethereum connection and web3 provider if possible
+    await enableInjectedWeb3EthereumConnection();
+    setupWeb3Provider();
+
     let { failure, reason, args } = await configureTransaction(false);
     if (failure) {
       alert(reason);
@@ -325,12 +337,6 @@ function validateSignalingContractAddress(contractAddress, nonce) {
  * Setup web3 provider using InjectedWeb3's injected providers
  */
 function setupWeb3Provider() {
-  if (typeof window.ethereum !== 'undefined') {
-    // Remove target="_blank" since it breaks links for Toshi/Coinbase Wallet
-    if (window.ethereum.isToshi || window.ethereum.isCoinbaseWallet) {
-      $('[target="_blank"]').removeAttr('target');
-    }
-  }
   // Setup web3 provider
   if (typeof window.ethereum !== 'undefined' || (typeof window.web3 !== 'undefined')) {
     // Web3 browser user detected. You can now use the provider.
