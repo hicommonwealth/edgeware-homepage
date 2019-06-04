@@ -113,7 +113,7 @@
           },
           {
             "indexed": false,
-            "name": "edgewareKey",
+            "name": "edgewareAddr",
             "type": "bytes"
           },
           {
@@ -141,7 +141,7 @@
           },
           {
             "indexed": false,
-            "name": "edgewareKey",
+            "name": "edgewareAddr",
             "type": "bytes"
           },
           {
@@ -162,7 +162,7 @@
             "type": "uint8"
           },
           {
-            "name": "edgewareKey",
+            "name": "edgewareAddr",
             "type": "bytes"
           },
           {
@@ -189,7 +189,7 @@
             "type": "uint32"
           },
           {
-            "name": "edgewareKey",
+            "name": "edgewareAddr",
             "type": "bytes"
           }
         ],

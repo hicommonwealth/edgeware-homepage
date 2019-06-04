@@ -1,6 +1,5 @@
-let provider, web3;
+let provider, web3, summary;
 const MAINNET_LOCKDROP = '0x1b75b90e60070d37cfa9d87affd124bb345bf70a';
-const ROPSTEN_LOCKDROP = '0x111ee804560787E0bFC1898ed79DAe24F2457a04';
 const LOCKDROP_ABI = JSON.stringify([{"constant":true,"inputs":[],"name":"LOCK_START_TIME","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"LOCK_END_TIME","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"LOCK_DROP_PERIOD","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_origin","type":"address"},{"name":"_nonce","type":"uint32"}],"name":"addressFrom","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"pure","type":"function"},{"constant":false,"inputs":[{"name":"contractAddr","type":"address"},{"name":"nonce","type":"uint32"},{"name":"edgewareAddr","type":"bytes"}],"name":"signal","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"term","type":"uint8"},{"name":"edgewareAddr","type":"bytes"},{"name":"isValidator","type":"bool"}],"name":"lock","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"inputs":[{"name":"startTime","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":false,"name":"eth","type":"uint256"},{"indexed":false,"name":"lockAddr","type":"address"},{"indexed":false,"name":"term","type":"uint8"},{"indexed":false,"name":"edgewareAddr","type":"bytes"},{"indexed":false,"name":"isValidator","type":"bool"},{"indexed":false,"name":"time","type":"uint256"}],"name":"Locked","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"contractAddr","type":"address"},{"indexed":false,"name":"edgewareAddr","type":"bytes"},{"indexed":false,"name":"time","type":"uint256"}],"name":"Signaled","type":"event"}]);
 // UNIX dates for lockdrop reward events
 const JUNE_1ST_UTC = 1559347200;
@@ -12,21 +11,6 @@ const AUG_15TH_UTC = 1565827200;
 const AUG_30TH_UTC = 1567123200;
 
 $(async function() {
-  $('input[name="network"]').change(async function(e) {
-    $('#CHARTS_LOADING').text('Loading...');
-    let network = $('input[name="network"]:checked').val();
-    if (network === 'mainnet') {
-      $('#LOCKDROP_CONTRACT_ADDRESS').val(MAINNET_LOCKDROP);
-      await drawChart();
-    } else if (network === 'ropsten') {
-      $('#LOCKDROP_CONTRACT_ADDRESS').val(ROPSTEN_LOCKDROP);
-      await drawChart();
-    } else {
-      $('#LOCKDROP_CONTRACT_ADDRESS').val(MAINNET_LOCKDROP);
-      await drawChart();
-    }
-  }).trigger('change');
-
   $('#LOCK_LOOKUP_BTN').click(async function() {
     let addr = $('#LOCKDROP_PARTICIPANT_ADDRESS').val();
     // Sanitize address input
@@ -44,7 +28,7 @@ $(async function() {
     }
     let lockdropContractAddress = $('#LOCKDROP_CONTRACT_ADDRESS').val();
     const json = await $.getJSON('Lockdrop.json');
-    setupWeb3Provider();
+    web3 = setupWeb3Provider();
     const contract = new web3.eth.Contract(json.abi, lockdropContractAddress);
     $('#EFFECTIVE_ETH_CHART').empty();
     $('#ETH_CHART').empty();
@@ -52,9 +36,7 @@ $(async function() {
     const lockEvents = await getLocks(contract, addr);
     const signalEvents = await getSignals(contract, addr);
     const now = await getCurrentTimestamp();
-    let etherscanNet = ($('input[name="network"]:checked').val() === 'mainnet')
-      ? 'https://etherscan.io/tx/'
-      : 'https://ropsten.etherscan.io/tx/';
+    let etherscanNet = 'https://etherscan.io/tx/';
     // Append only 1 signal event others will not be counted
     if (signalEvents.length > 0) {
       let balance = await web3.eth.getBalance(signalEvents[0].returnValues.contractAddr);
@@ -66,7 +48,7 @@ $(async function() {
         `     <p>Tx Hash: <a href=${etherscanNet}${signalEvents[0].transactionHash} target="_blank">${signalEvents[0].transactionHash}</a></p>`,
         `     <p>ETH Signaled: ${balance}</p>`,
         `     <p>Signaling Address: ${signalEvents[0].returnValues.contractAddr}</p>`,
-        `     <p>EDG Keys: ${signalEvents[0].returnValues.edgewareKey}</p>`,
+        `     <p>EDG Keys: ${signalEvents[0].returnValues.edgewareAddr}</p>`,
         `     <p>Signal Time: ${signalEvents[0].returnValues.time}</p>`,
         '   </div>',
         '</li>',
@@ -81,8 +63,9 @@ $(async function() {
         eth: web3.utils.fromWei(event.returnValues.eth, 'ether'),
         lockContractAddr: event.returnValues.lockAddr,
         term: event.returnValues.term,
-        edgewarePublicKeys: event.returnValues.edgewareKey,
+        edgewarePublicKeys: event.returnValues.edgewareAddr,
         unlockTime: `${(lockStorage.unlockTime - now) / 60} minutes`,
+        isValidator: event.returnValues.isValidator,
       };
     });
     // Create lock event list elements
@@ -99,6 +82,7 @@ $(async function() {
         `     <p>Term Length: ${(r.term === 0) ? '3 months' : (r.term === 1) ? '6 months' : '12 months'}</p>`,
         `     <p>EDG Keys: ${r.edgewarePublicKeys}</p>`,
         `     <p>Unlock Time: ${r.unlockTime}</p>`,
+        `     <p>Intent to validate: ${r.isValidator}</p>`,
         '   </div>',
         '</li>',
       ].join('\n'));
@@ -109,12 +93,12 @@ $(async function() {
 
 // Draw the chart and set the chart values
 async function drawChart() {
-  let summary;
   try {
     summary = await getParticipationSummary();
   } catch (e) {
     summary = undefined;
   }
+
   if (!summary) {
     $('#CHARTS_LOADING').show().text('No data - You may be over the API limit. Wait 15 seconds and try again.');
     $('#EFFECTIVE_ETH_CHART').empty();
@@ -124,22 +108,19 @@ async function drawChart() {
 
   var vanillaData = google.visualization.arrayToDataTable([
     ['Type', 'Lock or signal action'],
-    ['Locked ETH', summary.totalETHLocked],
-    ['Signaled ETH', summary.totalETHSignaled],
+    ['Locked ETH', Number(summary.totalETHLocked)],
+    ['Signaled ETH', Number(summary.totalETHSignaled)],
   ]);
 
-  $('.total-amount span').text((summary.totalETHLocked + summary.totalETHSignaled).toFixed(2));
-  $('.locked-amount span').text(summary.totalETHLocked.toFixed(2));
-  $('.signaled-amount span').text(summary.totalETHSignaled.toFixed(2));
-
-  const totalEffectiveETH = summary.totalEffectiveETHLocked + summary.totalEffectiveETHSignaled;
-  const lockersEDG = 4500000000 * summary.totalEffectiveETHLocked / totalEffectiveETH;
-  const signalersEDG = 4500000000 * summary.totalEffectiveETHSignaled / totalEffectiveETH;
+  $('.total-amount span').text(Number(summary.totalETH).toFixed(2));
+  $('.locked-amount span').text(Number(summary.totalETHLocked).toFixed(2));
+  $('.signaled-amount span').text(Number(summary.totalETHSignaled).toFixed(2));
+  console.log(summary);
   const foundersEDG = 500000000;
   var effectiveData = google.visualization.arrayToDataTable([
     ['Type', 'Lock or signal action'],
-    ['Lockers', lockersEDG],
-    ['Signalers', signalersEDG],
+    ['Lockers', Number(summary.lockersEDG)],
+    ['Signalers', Number(summary.signalersEDG)],
     ['Other', foundersEDG],
   ]);
 
@@ -154,6 +135,13 @@ async function drawChart() {
     ['Validating EDG pubkeys', 'ETH locked'],
     ...Object.keys(summary.validatingLocks).map(key => {
       return [key, Number(web3.utils.fromWei(summary.locks[key].lockAmt, 'ether'))];
+    })
+  ]);
+
+  var signalData = google.visualization.arrayToDataTable([
+    ['EDG pubkey', 'ETH signaled'],
+    ...Object.keys(summary.signals).map(key => {
+      return [key, Number(web3.utils.fromWei(summary.signals[key].signalAmt, 'ether'))];
     })
   ]);
 
@@ -173,11 +161,17 @@ async function drawChart() {
   var lockDistributionOptions = {
     title: 'Lock distribution by EDG public keys',
     width: width,
-    'height':400,
+    height: 400,
   };
 
   var validatingLockDistributionOptions = {
     title: 'Validating Lock distribution by EDG public keys',
+    width: width,
+    height: 400,
+  };
+
+  var signalDistributionOptions = {
+    title: 'Signal distribution by EDG public keys',
     width: width,
     height: 400,
   };
@@ -194,6 +188,9 @@ async function drawChart() {
 
   var validatingLockDistribution = new google.visualization.PieChart(document.getElementById('VALIDATING_LOCK_DISTRIBUTION'));
   validatingLockDistribution.draw(validatingLockData, validatingLockDistributionOptions);
+
+  var signalDistribution = new google.visualization.PieChart(document.getElementById('SIGNAL_DISTRIBUTION'));
+  signalDistribution.draw(signalData, signalDistributionOptions);
   $('#CHARTS_LOADING').hide();
 }
 
@@ -207,11 +204,17 @@ function isHex(inputString) {
 /**
  * Setup web3 provider using InjectedWeb3's injected providers
  */
-function setupWeb3Provider() {
+function setupWeb3Provider(url) {
   // Setup web3 provider
-  let network = $('input[name="network"]:checked').val();
-  provider = new Web3.providers.HttpProvider(`https://${network}.infura.io`);
-  web3 = new window.Web3(provider);
+  let provider;
+  if (url) {
+    provider = new Web3.providers.HttpProvider(url);
+  } else {
+    let network = $('input[name="network"]:checked').val();
+    provider = new Web3.providers.HttpProvider(`https://mainnet.infura.io`);
+  }
+
+  return new window.Web3(provider);
 }
 
 /**
@@ -266,10 +269,9 @@ const getCurrentTimestamp = async () => {
 const getParticipationSummary = async () => {
   let lockdropContractAddress = $('#LOCKDROP_CONTRACT_ADDRESS').val();
   const json = await $.getJSON('Lockdrop.json');
-  setupWeb3Provider();
   $('#EFFECTIVE_ETH_CHART').empty();
   $('#ETH_CHART').empty();
-
+  web3 = setupWeb3Provider(`https://eth-mainnet.alchemyapi.io/jsonrpc/-vPGIFwUyjlMRF9beTLXiGQUK6Nf3k8z`);
   const contract = new web3.eth.Contract(json.abi, lockdropContractAddress);
   // Get balances of the lockdrop
   let { locks, validatingLocks, totalETHLocked, totalEffectiveETHLocked, numLocks } = await calculateEffectiveLocks(contract);
@@ -278,18 +280,23 @@ const getParticipationSummary = async () => {
   let totalEffectiveETH = totalEffectiveETHLocked.add(totalEffectiveETHSignaled);
   let avgLock = totalETHLocked.div(web3.utils.toBN(numLocks));
   let avgSignal = totalETHSignaled.div(web3.utils.toBN(numSignals));
+
+  // Compute fractions of lockers and signalers EDG from effective ETH
+  const lockersEDG = web3.utils.toBN('4500000000').mul(totalEffectiveETHLocked).div(totalEffectiveETH);
+  const signalersEDG = web3.utils.toBN('4500000000').mul(totalEffectiveETHSignaled).div(totalEffectiveETH);
   return {
     locks, validatingLocks, signals,
-    totalETHLocked: Number(web3.utils.fromWei(totalETHLocked, 'ether')),
-    totalEffectiveETHLocked: Number(web3.utils.fromWei(totalEffectiveETHLocked, 'ether')),
-    totalETHSignaled: Number(web3.utils.fromWei(totalETHSignaled, 'ether')),
-    totalEffectiveETHSignaled: Number(web3.utils.fromWei(totalEffectiveETHSignaled, 'ether')),
-    totalETH: Number(web3.utils.fromWei(totalETH, 'ether')),
-    totalEffectiveETH: Number(web3.utils.fromWei(totalEffectiveETH, 'ether')),
+    lockersEDG, signalersEDG,
+    totalETHLocked: web3.utils.fromWei(totalETHLocked, 'ether'),
+    totalEffectiveETHLocked: web3.utils.fromWei(totalEffectiveETHLocked, 'ether'),
+    totalETHSignaled: web3.utils.fromWei(totalETHSignaled, 'ether'),
+    totalEffectiveETHSignaled: web3.utils.fromWei(totalEffectiveETHSignaled, 'ether'),
+    totalETH: web3.utils.fromWei(totalETH, 'ether'),
+    totalEffectiveETH: web3.utils.fromWei(totalEffectiveETH, 'ether'),
     numLocks,
     numSignals,
-    avgLock: Number(web3.utils.fromWei(avgLock, 'ether')),
-    avgSignal: Number(web3.utils.fromWei(avgSignal, 'ether')),
+    avgLock: web3.utils.fromWei(avgLock, 'ether'),
+    avgSignal: web3.utils.fromWei(avgSignal, 'ether'),
   };
 }
 
@@ -314,7 +321,6 @@ const calculateEffectiveLocks = async (lockdropContract) => {
     fromBlock: 0,
     toBlock: 'latest',
   });
-
   // Compatibility with all contract formats
   let lockdropStartTime = (await lockdropContract.methods.LOCK_START_TIME().call());
   // Add balances and effective values to total
@@ -359,7 +365,7 @@ const calculateEffectiveLocks = async (lockdropContract) => {
   return { locks, validatingLocks, totalETHLocked, totalEffectiveETHLocked, numLocks: lockEvents.length };
 };
 
-const calculateEffectiveSignals = async (lockdropContract, blockNumber=null) => {
+const calculateEffectiveSignals = async (lockdropContract, blockNumber=null, batchSize=100) => {
   let totalETHSignaled = web3.utils.toBN(0);
   let totalEffectiveETHSignaled = web3.utils.toBN(0);
   const signals = {};
@@ -368,37 +374,63 @@ const calculateEffectiveSignals = async (lockdropContract, blockNumber=null) => 
     toBlock: 'latest',
   });
 
-  const promises = signalEvents.map(async (event) => {
-    const data = event.returnValues;
-    // Get balance at block that lockdrop ends
-    let balance;
-    if (blockNumber) {
-      balance = await web3.eth.getBalance(data.contractAddr, blockNumber);
-    } else {
-      balance = await web3.eth.getBalance(data.contractAddr);
-    }
-    // Get value for each signal event and add it to the collection
-    let value = getEffectiveValue(balance, 'signaling');
-    // Add value to total signaled ETH
-    totalETHSignaled = totalETHSignaled.add(web3.utils.toBN(balance));
-    totalEffectiveETHSignaled = totalEffectiveETHSignaled.add(value);
+  const seenSignalers = {};
 
-    // Add all lockers to a collection for data processing
-    if (data.edgewareAddr in signals) {
-      signals[data.edgewareAddr] = {
-        signalAmt: web3.utils.toBN(balance).add(web3.utils.toBN(signals[data.edgewareAddr].signalAmt)).toString(),
-        effectiveValue: web3.utils.toBN(signals[data.edgewareAddr].effectiveValue).add(value).toString(),
-      };
+  let getSignalers = signalEvents.map((event) => {
+    if (event.returnValues.contractAddr in seenSignalers) {
+      return { seen: true };
     } else {
-      signals[data.edgewareAddr] = {
-        signalAmt: web3.utils.toBN(balance).toString(),
-        effectiveValue: value.toString(),
+      seenSignalers[event.returnValues.contractAddr] = true;
+      return {
+        seen: false,
+        contractAddr: event.returnValues.contractAddr,
+        edgewareAddr: event.returnValues.edgewareAddr,
       };
     }
-  });
+  }).filter(s => (!s.seen));
 
-  // Resolve promises to ensure all inner async functions have finished
-  await Promise.all(promises);
+  while (getSignalers.length > 0) {
+    let signalerBatch;
+    if (getSignalers.length >= batchSize) {
+      signalerBatch = getSignalers.slice(0, batchSize);
+      getSignalers = getSignalers.slice(batchSize);
+    } else {
+      signalerBatch = getSignalers;
+      getSignalers = [];
+    }
+    signalerBatch = signalerBatch.map(async s => {
+      // Get balance at block that lockdrop ends
+      let balance;
+      if (blockNumber) {
+        balance = await web3.eth.getBalance(s.contractAddr, blockNumber);
+      } else {
+        balance = await web3.eth.getBalance(s.contractAddr);
+      }
+
+      const value = getEffectiveValue(balance, 'signaling');
+      // Add value to total signaled ETH
+      totalETHSignaled = totalETHSignaled.add(web3.utils.toBN(balance));
+      totalEffectiveETHSignaled = totalEffectiveETHSignaled.add(value);
+
+      // Add all lockers to a collection for data processing
+      if (s.edgewareAddr in signals) {
+        signals[s.edgewareAddr] = {
+          signalAmt: web3.utils.toBN(balance).add(web3.utils.toBN(signals[s.edgewareAddr].signalAmt)).toString(),
+          effectiveValue: web3.utils.toBN(signals[s.edgewareAddr].effectiveValue).add(value).toString(),
+        };
+      } else {
+        signals[s.edgewareAddr] = {
+          signalAmt: web3.utils.toBN(balance).toString(),
+          effectiveValue: value.toString(),
+        };
+      }
+      return { value, balance, ...s };
+    });
+
+    signalerBatch = await Promise.all(signalerBatch);
+    console.log(signalerBatch.length, getSignalers.length);
+    await sleep(250);
+  }
   // Return signals and total ETH signaled
   return { signals, totalETHSignaled, totalEffectiveETHSignaled, numSignals: signalEvents.length };
 }
@@ -453,4 +485,8 @@ const getAdditiveBonus = (lockTime, lockStart) => {
       return web3.utils.toBN(0);
     }
   }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
