@@ -1,4 +1,71 @@
 en:
+- section: Developer Resources
+  items:
+    - question: How do I write smart contracts on Edgeware?
+      answer: |
+        There is an interactive tutorial that guides you through
+        writing two basic smart contracts here:
+
+        http://tiny.cc/ink-workshop
+
+    - question: How do I acquire some testnet EDG?
+      answer: |
+        https://faucets.blockxlabs.com/
+
+    - question: How do I run an Edgeware node?
+      answer: |
+        Clone and follow the instructions in this repository:
+
+        https://github.com/hicommonwealth/edgeware-node
+
+    - question: How do I develop new modules for Edgeware?
+      answer: |
+        Edgeware documentation is a work in progress, but you can find it here:
+
+        https://edgeware.gitbook.io/doc-edgewa-re/
+
+    - question: Edgeware Telemetry
+      answer: |
+        Check on the status of the network, monitor the number of
+        nodes, and more:
+
+        https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
+
+    - question: What is Substrate?
+      answer: |
+
+        Substrate is the underlying technology that Edgeware is built
+        on, a developer framework for constructing advanced and
+        self-upgrading WebAssembly blockchains. Documentation for Substrate
+        can be found here:
+
+        https://docs.substrate.dev/
+
+        See the Github repository to read the code, or for
+        instructions to start your own chain:
+
+        https://github.com/paritytech/substrate
+
+        There is also an active Riot chat for Substrate developers:
+
+        https://riot.im/app/#/room/#substrate-technical:matrix.org
+
+    - question: What is Polkadot?
+      answer: |
+
+        Polkadot is an blockchain interoperability protocol, which
+        powers a network of interconnected blockchains. Other
+        blockchains and decentralized apps can run as chains within
+        the Polkadot network, or be bridged to from Polkadot. For more
+        information:
+
+        https://wiki.polkadot.network/en/latest/
+
+        https://github.com/w3f/polkadot-wiki/
+
+
+## Chinese
+cn:
 - section: Developer
   items:
     - question: Writing Smart Contracts on Edgeware
@@ -16,61 +83,17 @@ en:
     - question: Edgeware Telemetry
       answer: |
         Check on the status of the network, monitor number of nodes and more.
-        
+
         https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
-    - question: Edgeware Faucet 
+    - question: Edgeware Faucet
       answer: |
         https://faucets.blockxlabs.com/
 
     - question: What is Substrate?
       answer: |
-        Substrate is the underlying technology that Edgeware is built on. Substrate is built by Parity. 
-        Documentation can be found: 
-            https://docs.substrate.dev/
-        Start your own chain:
-            https://github.com/paritytech/substrate
-        Join the chat:
-            https://riot.im/app/#/room/#substrate-technical:matrix.org
-
-    - question: What is Polkadot?
-      answer: |
-        More info below:
-            https://wiki.polkadot.network/en/latest/
-        Here's an overview:
-            https://github.com/w3f/polkadot-wiki/
-
-
-## Chinese
-cn:
-- section: Developer
-  items:
-        - question: Writing Smart Contracts on Edgeware
-      answer: |
-        http://tiny.cc/ink-workshop
-
-    - question: Run an Edgeware Node
-      answer: |
-        If you're interested in running a node, this is the main repository for [Edgeware](https://github.com/hicommonwealth/edgeware-node)
-
-    - question: Edgeware Documentation (WIP)
-      answer: |
-        https://edgeware.gitbook.io/doc-edgewa-re/
-
-    - question: Edgeware Telemetry
-      answer: |
-        Check on the status of the network, monitor number of nodes and more.
-        
-        https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
-
-    - question: Edgeware Faucet 
-      answer: |
-        https://faucets.blockxlabs.com/
-
-    - question: What is Substrate?
-      answer: |
-        Substrate is the underlying technology that Edgeware is built on. Substrate is built by Parity. 
-        Documentation can be found: 
+        Substrate is the underlying technology that Edgeware is built on. Substrate is built by Parity.
+        Documentation can be found:
             https://docs.substrate.dev/
         Start your own chain:
             https://github.com/paritytech/substrate
@@ -103,17 +126,17 @@ jp:
     - question: Edgeware Telemetry
       answer: |
         Check on the status of the network, monitor number of nodes and more.
-        
+
         https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
-    - question: Edgeware Faucet 
+    - question: Edgeware Faucet
       answer: |
         https://faucets.blockxlabs.com/
 
     - question: What is Substrate?
       answer: |
-        Substrate is the underlying technology that Edgeware is built on. Substrate is built by Parity. 
-        Documentation can be found: 
+        Substrate is the underlying technology that Edgeware is built on. Substrate is built by Parity.
+        Documentation can be found:
             https://docs.substrate.dev/
         Start your own chain:
             https://github.com/paritytech/substrate
@@ -126,7 +149,7 @@ jp:
             https://wiki.polkadot.network/en/latest/
         Here's an overview:
             https://github.com/w3f/polkadot-wiki/
-            
+
 ## Cantonese
 canto:
 - section: Developer
@@ -146,17 +169,17 @@ canto:
     - question: Edgeware Telemetry
       answer: |
         Check on the status of the network, monitor number of nodes and more.
-        
+
         [https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
-    - question: Edgeware Faucet 
+    - question: Edgeware Faucet
       answer: |
         [https://faucets.blockxlabs.com/](https://faucets.blockxlabs.com/)
 
     - question: What is Substrate?
       answer: |
-        Substrate is the underlying technology that Edgeware is built on. Substrate is built by Parity. 
-        Documentation can be found: 
+        Substrate is the underlying technology that Edgeware is built on. Substrate is built by Parity.
+        Documentation can be found:
             https://docs.substrate.dev/
         Start your own chain:
             https://github.com/paritytech/substrate
@@ -189,17 +212,17 @@ ko:
     - question: Edgeware Telemetry
       answer: |
         Check on the status of the network, monitor number of nodes and more.
-        
+
         https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
-    - question: Edgeware Faucet 
+    - question: Edgeware Faucet
       answer: |
         https://faucets.blockxlabs.com/
 
     - question: What is Substrate?
       answer: |
-        Substrate is the underlying technology that Edgeware is built on. Substrate is built by Parity. 
-        Documentation can be found: 
+        Substrate is the underlying technology that Edgeware is built on. Substrate is built by Parity.
+        Documentation can be found:
             https://docs.substrate.dev/
         Start your own chain:
             https://github.com/paritytech/substrate

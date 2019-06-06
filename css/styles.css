@@ -444,10 +444,14 @@ a.overlay-close {
 
 
 /* faq */
+.section.press,
+.section.dev,
 .section.faq {
     margin-top: 70px;
     margin-bottom: 90px;
 }
+.section.press h1,
+.section.dev h1,
 .section.faq h1 {
     text-align: center;
     margin-top: 70px;
@@ -456,21 +460,29 @@ a.overlay-close {
     font-weight: 500;
     width: 100%;
 }
+.section.press h2,
+.section.dev h2,
 .section.faq h2 {
     text-align: center;
     margin-top: 70px;
     margin-bottom: 80px;
 }
+.section.press .items,
+.section.dev .items,
 .section.faq .items {
     column-count: 2;
     column-gap: 70px;
 }
+.section.press .item,
+.section.dev .item,
 .section.faq .item {
     display: inline-block;
     margin: 0 0 35px;
     width: 100%;
     word-break: break-word;
 }
+.section.press h3,
+.section.dev .item h3,
 .section.faq .item h3 {
     float: left;
     margin: 0;
@@ -479,6 +491,8 @@ a.overlay-close {
     font-weight: 500;
     line-height: 1.5;
 }
+.section.press .item .item-body,
+.section.dev .item .item-body,
 .section.faq .item .item-body {
     clear: both;
     font-size: 18px;
@@ -622,14 +636,20 @@ a.overlay-close {
         max-width: 240px;
         margin-bottom: 6px;
     }
+    .section.press .items,
+    .section.dev .items,
     .section.faq .items {
         column-gap: 30px;
     }
+    .section.press .item,
+    .section.dev .item,
     .section.faq .item {
         margin: 0 0 15px;
     }
 }
 @media (max-width: 680px) {
+    .section.press .items,
+    .section.dev .items,
     .section.faq .items {
         column-count: 1;
     }
@@ -675,6 +695,8 @@ a.overlay-close {
         font-size: .92em;
         margin: 60px auto 50px;
     }
+    .section.press .item,
+    .section.dev .item,
     .section.faq .item {
         width: 100%;
     }

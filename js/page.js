@@ -111,7 +111,7 @@ $(function() {
             $('<div class="item-body">').append(
               item.answer.split('\n\n').map(function(paragraph) {
                 return (paragraph.startsWith('http://') || paragraph.startsWith('https://')) ?
-                  $('<a target="_blank">').attr('href', paragraph).text(paragraph) :
+                  $('<p>').append($('<a target="_blank">').attr('href', paragraph).text(paragraph)) :
                   $('<p>').text(paragraph);
               })
             ),
@@ -157,7 +157,7 @@ $(function() {
             $('<div class="item-body">').append(
               item.answer.split('\n\n').map(function(paragraph) {
                 return (paragraph.startsWith('http://') || paragraph.startsWith('https://')) ?
-                  $('<a target="_blank">').attr('href', paragraph).text(paragraph) :
+                  $('<p>').append($('<a target="_blank">').attr('href', paragraph).text(paragraph)) :
                   $('<p>').text(paragraph);
               })
             ),
@@ -203,7 +203,7 @@ $(function() {
             $('<div class="item-body">').append(
               item.answer.split('\n\n').map(function(paragraph) {
                 return (paragraph.startsWith('http://') || paragraph.startsWith('https://')) ?
-                  $('<a target="_blank">').attr('href', paragraph).text(paragraph) :
+                  $('<p>').append($('<a target="_blank">').attr('href', paragraph).text(paragraph)) :
                   $('<p>').text(paragraph);
               })
             ),
