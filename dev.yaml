@@ -11,17 +11,17 @@ en:
 
     - question: Edgeware Documentation (WIP)
       answer: |
-        [https://edgeware.gitbook.io/doc-edgewa-re/](https://edgeware.gitbook.io/doc-edgewa-re/)
+        https://edgeware.gitbook.io/doc-edgewa-re/
 
     - question: Edgeware Telemetry
       answer: |
         Check on the status of the network, monitor number of nodes and more.
         
-        [https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0](https://telemetry.polkadot.io/#/Edgeware%20Testnet%20V0.2.0)
+        https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
     - question: Edgeware Faucet 
       answer: |
-        [https://faucets.blockxlabs.com/](https://faucets.blockxlabs.com/)
+        https://faucets.blockxlabs.com/
 
     - question: What is Substrate?
       answer: |
@@ -35,18 +35,19 @@ en:
 
     - question: What is Polkadot?
       answer: |
-        [https://github.com/w3f/polkadot-wiki/](https://github.com/w3f/polkadot-wiki/)
-        [https://wiki.polkadot.network/en/latest/](https://wiki.polkadot.network/en/latest/)
+        More info below:
+            https://wiki.polkadot.network/en/latest/
+        Here's an overview:
+            https://github.com/w3f/polkadot-wiki/
+
 
 ## Chinese
 cn:
 - section: Developer
   items:
-    - question: Writing Smart Contracts on Edgeware
+        - question: Writing Smart Contracts on Edgeware
       answer: |
-        [http://tiny.cc/ink-workshop](http://tiny.cc/ink-workshop)
-        [https://github.com/shawntabrizi/substrate-package/tree/contract](https://github.com/shawntabrizi/substrate-package/tree/contract)
-        [https://shawntabrizi.com/substrate-contracts-workshop/#/](https://shawntabrizi.com/substrate-contracts-workshop/#/)
+        http://tiny.cc/ink-workshop
 
     - question: Run an Edgeware Node
       answer: |
@@ -54,17 +55,17 @@ cn:
 
     - question: Edgeware Documentation (WIP)
       answer: |
-        [https://edgeware.gitbook.io/doc-edgewa-re/](https://edgeware.gitbook.io/doc-edgewa-re/)
+        https://edgeware.gitbook.io/doc-edgewa-re/
 
     - question: Edgeware Telemetry
       answer: |
         Check on the status of the network, monitor number of nodes and more.
         
-        [https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0](https://telemetry.polkadot.io/#/Edgeware%20Testnet%20V0.2.0)
+        https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
     - question: Edgeware Faucet 
       answer: |
-        [https://faucets.blockxlabs.com/](https://faucets.blockxlabs.com/)
+        https://faucets.blockxlabs.com/
 
     - question: What is Substrate?
       answer: |
@@ -78,10 +79,10 @@ cn:
 
     - question: What is Polkadot?
       answer: |
-        [https://github.com/w3f/polkadot-wiki/](https://github.com/w3f/polkadot-wiki/)
-        [https://wiki.polkadot.network/en/latest/](https://wiki.polkadot.network/en/latest/)
-
-
+        More info below:
+            https://wiki.polkadot.network/en/latest/
+        Here's an overview:
+            https://github.com/w3f/polkadot-wiki/
 
 ## Japanese
 jp:
@@ -89,9 +90,7 @@ jp:
   items:
     - question: Writing Smart Contracts on Edgeware
       answer: |
-        [http://tiny.cc/ink-workshop](http://tiny.cc/ink-workshop)
-        [https://github.com/shawntabrizi/substrate-package/tree/contract](https://github.com/shawntabrizi/substrate-package/tree/contract)
-        [https://shawntabrizi.com/substrate-contracts-workshop/#/](https://shawntabrizi.com/substrate-contracts-workshop/#/)
+        http://tiny.cc/ink-workshop
 
     - question: Run an Edgeware Node
       answer: |
@@ -99,17 +98,17 @@ jp:
 
     - question: Edgeware Documentation (WIP)
       answer: |
-        [https://edgeware.gitbook.io/doc-edgewa-re/](https://edgeware.gitbook.io/doc-edgewa-re/)
+        https://edgeware.gitbook.io/doc-edgewa-re/
 
     - question: Edgeware Telemetry
       answer: |
         Check on the status of the network, monitor number of nodes and more.
         
-        [https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0](https://telemetry.polkadot.io/#/Edgeware%20Testnet%20V0.2.0)
+        https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
     - question: Edgeware Faucet 
       answer: |
-        [https://faucets.blockxlabs.com/](https://faucets.blockxlabs.com/)
+        https://faucets.blockxlabs.com/
 
     - question: What is Substrate?
       answer: |
@@ -123,18 +122,18 @@ jp:
 
     - question: What is Polkadot?
       answer: |
-        [https://github.com/w3f/polkadot-wiki/](https://github.com/w3f/polkadot-wiki/)
-        [https://wiki.polkadot.network/en/latest/](https://wiki.polkadot.network/en/latest/)
-
+        More info below:
+            https://wiki.polkadot.network/en/latest/
+        Here's an overview:
+            https://github.com/w3f/polkadot-wiki/
+            
 ## Cantonese
 canto:
 - section: Developer
   items:
     - question: Writing Smart Contracts on Edgeware
       answer: |
-        [http://tiny.cc/ink-workshop](http://tiny.cc/ink-workshop)
-        [https://github.com/shawntabrizi/substrate-package/tree/contract](https://github.com/shawntabrizi/substrate-package/tree/contract)
-        [https://shawntabrizi.com/substrate-contracts-workshop/#/](https://shawntabrizi.com/substrate-contracts-workshop/#/)
+        http://tiny.cc/ink-workshop
 
     - question: Run an Edgeware Node
       answer: |
@@ -142,13 +141,13 @@ canto:
 
     - question: Edgeware Documentation (WIP)
       answer: |
-        [https://edgeware.gitbook.io/doc-edgewa-re/](https://edgeware.gitbook.io/doc-edgewa-re/)
+        https://edgeware.gitbook.io/doc-edgewa-re/
 
     - question: Edgeware Telemetry
       answer: |
         Check on the status of the network, monitor number of nodes and more.
         
-        [https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0](https://telemetry.polkadot.io/#/Edgeware%20Testnet%20V0.2.0)
+        [https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
     - question: Edgeware Faucet 
       answer: |
@@ -166,8 +165,10 @@ canto:
 
     - question: What is Polkadot?
       answer: |
-        [https://github.com/w3f/polkadot-wiki/](https://github.com/w3f/polkadot-wiki/)
-        [https://wiki.polkadot.network/en/latest/](https://wiki.polkadot.network/en/latest/)
+        More info below:
+            https://wiki.polkadot.network/en/latest/
+        Here's an overview:
+            https://github.com/w3f/polkadot-wiki/
 
 ## Korean
 ko:
@@ -175,9 +176,7 @@ ko:
   items:
     - question: Writing Smart Contracts on Edgeware
       answer: |
-        [http://tiny.cc/ink-workshop](http://tiny.cc/ink-workshop)
-        [https://github.com/shawntabrizi/substrate-package/tree/contract](https://github.com/shawntabrizi/substrate-package/tree/contract)
-        [https://shawntabrizi.com/substrate-contracts-workshop/#/](https://shawntabrizi.com/substrate-contracts-workshop/#/)
+        http://tiny.cc/ink-workshop
 
     - question: Run an Edgeware Node
       answer: |
@@ -185,17 +184,17 @@ ko:
 
     - question: Edgeware Documentation (WIP)
       answer: |
-        [https://edgeware.gitbook.io/doc-edgewa-re/](https://edgeware.gitbook.io/doc-edgewa-re/)
+        https://edgeware.gitbook.io/doc-edgewa-re/
 
     - question: Edgeware Telemetry
       answer: |
         Check on the status of the network, monitor number of nodes and more.
         
-        [https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0](https://telemetry.polkadot.io/#/Edgeware%20Testnet%20V0.2.0)
+        https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
     - question: Edgeware Faucet 
       answer: |
-        [https://faucets.blockxlabs.com/](https://faucets.blockxlabs.com/)
+        https://faucets.blockxlabs.com/
 
     - question: What is Substrate?
       answer: |
@@ -209,8 +208,10 @@ ko:
 
     - question: What is Polkadot?
       answer: |
-        [https://github.com/w3f/polkadot-wiki/](https://github.com/w3f/polkadot-wiki/)
-        [https://wiki.polkadot.network/en/latest/](https://wiki.polkadot.network/en/latest/)
+        More info below:
+            https://wiki.polkadot.network/en/latest/
+        Here's an overview:
+            https://github.com/w3f/polkadot-wiki/
 
 debug:
 - section: Debug
