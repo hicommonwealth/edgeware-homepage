@@ -131,4 +131,96 @@ $(function() {
       $('.faq-loading').text('Error');
     }
   }
+
+  var devs;
+  if ($('.section.dev').length > 0) {
+    $.get('/dev.yaml').then(function(result) {
+      devs = jsyaml.load(result);
+      renderDev(devs[hash || 'en']);
+    }).catch(function(err) {
+      console.error(err);
+    });
+  }
+
+  function renderDev(dev) {
+    try {
+      // render faq
+      var $new = $('<div></div>');
+      dev.map(function(section) {
+        var title = section.section;
+        var items = section.items;
+        var $header = $('<h2>' + title + '</h2>');
+        var $items = $('<div class="items clearfix"></div>');
+        items.map(function(item) {
+          $('<div class="item">').append(
+            $('<h3>').text(item.question),
+            $('<div class="item-body">').append(
+              item.answer.split('\n\n').map(function(paragraph) {
+                return (paragraph.startsWith('http://') || paragraph.startsWith('https://')) ?
+                  $('<a target="_blank">').attr('href', paragraph).text(paragraph) :
+                  $('<p>').text(paragraph);
+              })
+            ),
+          ).appendTo($items);
+        });
+        $new.append($header);
+        $new.append($items);
+      });
+
+      // push into document
+      $('.dev-loading').remove();
+      $('.section.dev').empty();
+      $new.appendTo($('.section.dev'));
+
+    } catch (e) {
+      console.error(e.name, ':', e.message);
+      $('.dev-loading').text('Error');
+    }
+  }
+
+  var presses;
+  if ($('.section.press').length > 0) {
+    $.get('/press.yaml').then(function(result) {
+      presses = jsyaml.load(result);
+      renderPress(presses[hash || 'en']);
+    }).catch(function(err) {
+      console.error(err);
+    });
+  }
+
+  function renderPress(press) {
+    try {
+      // render faq
+      var $new = $('<div></div>');
+      press.map(function(section) {
+        var title = section.section;
+        var items = section.items;
+        var $header = $('<h2>' + title + '</h2>');
+        var $items = $('<div class="items clearfix"></div>');
+        items.map(function(item) {
+          $('<div class="item">').append(
+            $('<h3>').text(item.question),
+            $('<div class="item-body">').append(
+              item.answer.split('\n\n').map(function(paragraph) {
+                return (paragraph.startsWith('http://') || paragraph.startsWith('https://')) ?
+                  $('<a target="_blank">').attr('href', paragraph).text(paragraph) :
+                  $('<p>').text(paragraph);
+              })
+            ),
+          ).appendTo($items);
+        });
+        $new.append($header);
+        $new.append($items);
+      });
+
+      // push into document
+      $('.press-loading').remove();
+      $('.section.press').empty();
+      $new.appendTo($('.section.press'));
+
+    } catch (e) {
+      console.error(e.name, ':', e.message);
+      $('.press-loading').text('Error');
+    }
+  }
 });
