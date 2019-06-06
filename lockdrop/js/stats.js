@@ -96,9 +96,9 @@ $(async function() {
         `     <p>Owner: ${r.owner}</p>`,
         `     <p>ETH Locked: ${r.eth} ether</p>`,
         `     <p>LUC Address: ${r.lockContractAddr}</p>`,
-        `     <p>Term Length: ${(r.term === 0) ? '3 months' : (r.term === 1) ? '6 months' : '12 months'}</p>`,
+        `     <p>Term Length: ${(r.term === '0') ? '3 months' : (r.term === '1') ? '6 months' : '12 months'}</p>`,
         `     <p>EDG Keys: ${r.edgewarePublicKeys}</p>`,
-        `     <p>Unlock Time: ${r.unlockTime}</p>`,
+        `     <p>Unlock Time Remaining: ${r.unlockTime}</p>`,
         '   </div>',
         '</li>',
       ].join('\n'));
