@@ -145,7 +145,20 @@ input[type="submit"]:active {
     padding: 40px 0;
     font-size: 22px;
 }
-
+.menu {
+    background: #333;
+    text-align: center;
+}
+.menu a.menu-item {
+    display: inline-block;
+    padding: 14px 22px;
+    text-decoration: none;
+    font-size: 94%;
+    color: #fff;
+}
+.menu a.menu-item:hover {
+    background: #444;
+}
 .footer {
     background: #333;
     padding: 20px 0 25px;
@@ -333,6 +346,12 @@ input[type="submit"]:active {
     }
     .container.body-container {
         margin: 20px auto;
+    }
+    .menu {
+        padding: 5px 0;
+    }
+    .menu a.menu-item {
+        padding: 5px 12px;
     }
     .form-field {
         display: block;
