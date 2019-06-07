@@ -11,6 +11,13 @@
     margin: 16px 0;
     min-height: 240px;
 }
+.disclaimer,
+.disclaimer a {
+    color: #aaa;
+}
+.disclaimer a:hover {
+    color: #555;
+}
 
 #CHARTS_LOADING {
     color: #c0c0c0;
