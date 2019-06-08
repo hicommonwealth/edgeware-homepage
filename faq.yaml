@@ -168,7 +168,7 @@ en:
 
     - question: How does Edgeware use Parity Substrate?
       answer: |
-        Parity Substate allows Edgeware developers to focus on improving
+        Parity Substrate allows Edgeware developers to focus on improving
         the chain rather than developing infrastructure.
 
         Chains launched on Substrate generally do not have to deal with
@@ -314,7 +314,7 @@ cn:
         我们将在Edgeware和其他部署上部署的其他治理技术
         网络。 我们希望EDG能够对我们的改进进行投票
         持有人并在Edgeware上实施！
-        
+
 - section: 技术
   items:
     - question: 在Edgeware上进行赌注/验证的经济性是什么？
@@ -350,7 +350,7 @@ cn:
 
     - question: Edgeware如何使用Parity Substrate？
       answer: |
-        Parity Substate允许Edgeware开发人员专注于改进
+        Parity Substrate允许Edgeware开发人员专注于改进
         链而不是发展基础设施。
 
         在Substrate上推出的链条通常不需要处理
@@ -380,7 +380,9 @@ jp:
 
     - question: ロックドロップ契約は監査されましたか？
       answer: |
-        はい。 QuantstampはLockdrop監査を完了しました。  <a href='https://drive.google.com/file/d/1Eg54_YToVuWGNa2R9KD_0eLg19y2h47d/view'>See Report</a> 
+        はい。 QuantstampはLockdrop監査を完了しました。
+
+        https://drive.google.com/file/d/1Eg54_YToVuWGNa2R9KD_0eLg19y2h47d/view
 
     - question: なぜロックドロップに参加するのですか？
       answer: |
@@ -561,7 +563,8 @@ canto:
     - question: 鎖定合同是否已經過審計？
       answer: |
         是的，通過Quantstamp
-        <a href='https://drive.google.com/file/d/1Eg54_YToVuWGNa2R9KD_0eLg19y2h47d/view'>See Report</a> 
+
+        https://drive.google.com/file/d/1Eg54_YToVuWGNa2R9KD_0eLg19y2h47d/view
 
     - question: 為什麼要參加鎖定？
       answer: |
@@ -711,7 +714,7 @@ canto:
 
     - question: Edgeware如何使用Parity Substrate？
       answer: |
-        Parity Substate允許Edgeware開發人員專注於改進
+        Parity Substrate允許Edgeware開發人員專注於改進
         鏈而不是發展基礎設施。
 
         在Substrate上推出的鏈條通常不需要處理
@@ -736,7 +739,9 @@ ko:
 
     - question: lockdrop 계약서를 감사 받았습니까?
       answer: |
-        예. Quanstamp는 lockdrop 계약 감사를 완료했습니다. 여기에서보기 : https://drive.google.com/file/d/1Eg54_YToVuWGNa2R9KD_0eLg19y2h47d/view
+        예. Quanstamp는 lockdrop 계약 감사를 완료했습니다. 여기에서보기 :
+
+        https://drive.google.com/file/d/1Eg54_YToVuWGNa2R9KD_0eLg19y2h47d/view
 
     - question: 왜 lockdrop에 참여합니까?
       answer: |
@@ -883,7 +888,7 @@ ko:
 
     - question: How does Edgeware use Parity Substrate?
       answer: |
-        Parity Substate를 사용하면 Edgeware 개발자가
+        Parity Substrate를 사용하면 Edgeware 개발자가
         체인을 개발하는 것보다
 
         Substrate에서 시작된 체인은 일반적으로 처리 할 필요가 없습니다.
