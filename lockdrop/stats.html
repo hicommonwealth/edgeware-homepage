@@ -8,16 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css?updated=20190607">
-    <link rel="stylesheet" href="css/stats.css?updated=20190607">
+    <meta http-equiv="refresh" content="0;url=https://stats.edgewa.re" />
     <link rel="icon" type="image/png" href="images/favicon.png">
     <script src="js/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="></script>
-    <script src="js/stats.js"></script>
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-    </script>
   </head>
   <body>
     <div class="header">
@@ -30,76 +23,12 @@
         <a class="menu-item" href="/lockdrop">Lockdrop</a>
         <a class="menu-item" href="/lockdrop/gettingstarted.html">Instructions</a>
         <a class="menu-item" href="/keygen">Key Generator</a>
-        <a class="menu-item active" href="/lockdrop/stats.html">Participation Statistics</a>
+        <a class="menu-item active" href="https://stats.edgewa.re">Participation Statistics</a>
         <a class="menu-item" href="/">Homepage</a>
       </div>
     </div>
     <div class="container body-container">
-      <div class="form-field">
-        <div class="form-left">
-          <div class="caption">Lockdrop contract</div>
-          <input id="LOCKDROP_CONTRACT_ADDRESS" type="text" value="0x1b75b90e60070d37cfa9d87affd124bb345bf70a" readonly></input>
-          <div class="network-selector">
-            <label><input type="radio" name="network" value="mainnet" checked></input>Mainnet</label>
-            <label><input type="radio" name="network" value="ropsten"></input>Ropsten (<a href="gettingstarted.html#testing">?</a>)</label>
-          </div>
-        </div>
-        <div class="explanation">
-          You can view the latest transactions on <a id="ETHERSCAN_LINK"
-          href="https://etherscan.io/address/0x1b75b90e60070d37cfa9d87affd124bb345bf70a"
-          target="_blank">Etherscan</a>.
-        </div>
-      </div>
-
-      <div class="numbers">
-        <div class="total-amount">
-          Total: <span>--</span> ETH
-        </div>
-        <div class="locked-amount">
-          Locked: <span>--</span> ETH
-        </div>
-        <div class="signaled-amount">
-          Signaled: <span>--</span> ETH
-        </div>
-      </div>
-      <div class="charts">
-        <div id="CHARTS_LOADING"></div>
-        <div id="ETH_CHART"></div>
-        <div id="EFFECTIVE_ETH_CHART"></div>
-      </div>
-      <div class="disclaimer">
-        NOTE: Signaled funds may be recognized as a 3-month lock under
-        the <a href="https://blog.edgewa.re/final-terms-and-updates-to-the-edgeware-lockdrop/"
-        target="_blank">generalized lock</a> policy. No individual
-        participating account will be assigned more than 20% of
-        EDG. This page is provided for informational purposes only; no
-        data shown on this page should be construed as final or a
-        commitment to deliver any amount or allocation of EDG.
-      </div>
-      <br/>
-      <br/>
-      <h3>Participant lookup</h3>
-      <div class="form-field">
-        <div class="form-left">
-          <div class="caption">Find participant address</div>
-          <input id="LOCKDROP_PARTICIPANT_ADDRESS" type="text" placeholder="Enter an ETH address: 0x1234..."></input>
-        </div>
-        <div class="explanation">
-          This will fetch all locks and signal actions from the input address
-        </div>
-      </div>
-      <div class="buttons">
-        <button id="LOCK_LOOKUP_BTN">Lookup</button>
-      </div>
-      <div>
-        <ul id="LOCK_LOOKUP_RESULTS"></ul>
-      </div>
+      Redirecting you to <a href="https://stats.edgewa.re">stats.edgewa.re</a>...
     </div>
-    <div class="footer">
-      <div class="container">
-        &copy; 2019 <span class="i18n">Commonwealth Labs</span>
-      </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
   </body>
 </html>
