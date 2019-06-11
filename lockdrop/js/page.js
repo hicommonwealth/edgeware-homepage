@@ -101,7 +101,6 @@ $(async function() {
     }
 
     // Setup ethereum connection and web3 provider if possible
-    await enableInjectedWeb3EthereumConnection();
     setupWeb3Provider();
 
     let { failure, reason, args } = await configureTransaction(false);
