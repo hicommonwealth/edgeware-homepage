@@ -23,6 +23,13 @@ en:
         Edgeware documentation is a work in progress, but you can find it here:
 
         https://edgeware.gitbook.io/doc-edgewa-re/
+        
+    - question: Is there a block explorer for Edgeware?
+      answer: |
+        You can explore Edgeware networks, including the current testnet at Polkascan:
+
+        https://polkascan.io/pre/edgeware-testnet/dashboard
+
 
     - question: Edgeware Telemetry
       answer: |
