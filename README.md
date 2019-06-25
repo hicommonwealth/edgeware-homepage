@@ -1,6 +1,6 @@
 ## Straightedge: An ethical self-improving smart contract blockchain
 
-Straightedge is a WASM-based smart contract platform built on [Parity Substrate](.
+Straightedge is a WASM-based smart contract platform built on [Parity Substrate](https://github.com/paritytech/substrate).
 It is a 0-day fork
 of the [Edgeware](https://edgewa.re/) blockchain built by
 [Commonwealth Labs](https://commonwealth.im/).  The Straightedge blockchain
