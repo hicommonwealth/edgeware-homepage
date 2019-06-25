@@ -1,19 +1,18 @@
-## Edgeware: A self-improving smart contract blockchain
+## Straightedge: An ethical self-improving smart contract blockchain
 
-Edgeware is a WASM-based smart contract platform. Participants in the
-network vote, delegate, and fund each other to improve the network.
+Straightedge is a WASM-based smart contract platform built on [Parity Substrate](.
+It is a 0-day fork
+of the [Edgeware](https://edgewa.re/) blockchain built by
+[Commonwealth Labs](https://commonwealth.im/).  The Straightedge blockchain
+is being built because we believe in the vision of Edgeware but believe that
+the initial distribution mechanisms of the EDGE tokens contains too many edge
+cases, that decreases the legitimacy of the entire project.
 
-Edgeware is launched by [Commonwealth Labs](https://commonwealth.im/)
-and built on [Parity Substrate](https://www.parity.io/substrate/).
-We're grateful for the support of many friends, advisors, and community
-members.
+For this reason, we are planning to launch Straightedge on the 15th of September,
+concurrently with the launch of Edgeware, as a 0 day fork, with the same feature set,
+but just a slightly changed initital distribution.
 
-### Internationalization
-
-Please feel free to contribute translations. To add a translation, please
-include:
-
-- A new YAML file in the `/i18n/` directory translating the homepage,
-  e.g. `fr.yaml`.
-- New FAQ enties in `faq.yaml` in the translated language.
-- Also update `/i18n/languages.yaml` with the language you've added.
+The primary changes we propose are:
+1) Contract deployers cannot signal on behalf of contracts.
+2) No ["generalized locking"](https://blog.edgewa.re/generalized-lock-policy-who-can-appeal-and-how/)
+3) Signalled tokens are immediately available in the genesis distribution rather than 1 year later
