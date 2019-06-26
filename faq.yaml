@@ -23,8 +23,7 @@ en:
         3. All signalled funds distributed in genesis
 
     - question: Why is getting the initial distribution right important?
-      answer: | 
-
+      answer: |
         The initial token distribution model is of vital importance to any blockchain project
         with a viable economic token model. This is especially true in the case of on-chain systems of
         governance whereby protocol level and other changes are made through the votes and signals of
