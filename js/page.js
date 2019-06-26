@@ -88,7 +88,7 @@ $(function() {
   //
   var faqs;
   if ($('.section.faq').length > 0) {
-    $.get('../faq.yaml').then(function(result) {
+    $.get('/faq.yaml').then(function(result) {
       faqs = jsyaml.load(result);
       renderFAQ(faqs[hash || 'en']);
     }).catch(function(err) {
