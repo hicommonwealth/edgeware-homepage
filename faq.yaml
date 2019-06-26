@@ -22,6 +22,15 @@ en:
 
         3. All signalled funds distributed in genesis
 
+    - question: Why is getting the initial distribution right important?
+      answer: | 
+
+        The initial token distribution model is of vital importance to any blockchain project
+        with a viable economic token model. This is especially true in the case of on-chain systems of
+        governance whereby protocol level and other changes are made through the votes and signals of
+        token holders. Should an initial token distribution favor certain parties, dominant voting
+        groups and blocks will continue to increase their power and distribution over time, shaping
+        the future of any such ecosystem.
 
     - question: What's the issue with signalling on behalf of contracts?
       answer: |
@@ -37,8 +46,14 @@ en:
 
     - question: What's the issue with generalized locking?
       answer: |
-        Once removing the ability to signal on behalf of contracts, generalized locking becomes a non-issue.
-        However, it is still useful to point out some of the issues with the policy.  It places undue burden
+        A last minute change called Generalized Locking was added to the Edgeware lockdrop.  It was declared that
+        "Generalized Lock" occurs when “an address that calls ‘Signal’ is unable to sign a transaction with
+        msg.value greater than 0 for the entirety of the 3, 6 or 12-month lock durations”,
+        and in these cases “that signal can be treated as a lock for the purposes of the allocation award”. 
+
+        Because just a generalized lock can really only work with a contract, removing the ability to signal
+        on behalf of a contract as discussed above, removes generalized locking altogether, it is worth explicitly 
+        pointing out some of the issues with the policy.  It places undue burden
         upon the launchers of the network to audit and decide on different generalized lock contracts, which
         may contain edge cases such as bypassing locking by issuing derivatives of the locked Ether
         (such as with WETH).  Furthermore, if a contract claiming to be a lock doesn't
@@ -52,6 +67,14 @@ en:
         is due to the influence of the Web3 Foundation that these odd design decisions were made in the construction of the
         Edgeware lockdrop.  In order to recover their own lost funds, they likely pushed for design decisions that threaten
         the legitmacy of the Edgeware project as a whole.
+
+        An open system of governance is one in which the people deserve a say, and a system in which
+        rules are changed to provide select parties with powerful voting shares is not open.
+        In the case of Edgeware, the potential for an open-future was extinguished prior to launch by
+        late-stage changes to a token distribution model that aimed to artificially provide favor to a
+        small, select group of individuals and teams through what was labeled a “generalized lock”.
+        This change alone provided an extremely high amount of all network-tokens to a party or parties not in control
+        of the funds for which tokens are rewarded. 
 
         Nonetheless, because the Web3 Foundation's support in funding the development of Parity Substrate, the framework upon
         which Straightedge is built, is undeniable, possible ways of rewarding them would be to use the on-chain governance process
