@@ -7,7 +7,7 @@ en:
         Straightedge is derived from the Edgeware project, and the original whitepaper
         is linked here.
 
-        https://arena-attachments.s3.amazonaws.com/4282259/789835ae15b3f6fb5ea702f13544fabf.pdf?1557961331
+        https://http://straighted.ge/edgeware-whitepaper
 
         Further, an initial post that delves into the advancements made in Straightedge’s distribution,
         governance and plans for future development will be available soon. 
@@ -53,41 +53,45 @@ en:
         msg.value greater than 0 for the entirety of the 3, 6 or 12-month lock durations”,
         and in these cases “that signal can be treated as a lock for the purposes of the allocation award”. 
 
-        Because generalized locking only makes sense for contracts, removing the ability to signal
-        on behalf of a contract as discussed above removes generalized locking altogether.  However, it is still
-        worth explicitly pointing out some of the issues with the policy.  It places undue burden
-        upon the launchers of the network to audit and decide on different generalized lock contracts, which
-        may contain edge cases such as bypassing locking by issuing derivatives of the locked Ether
-        (such as with WETH).  Furthermore, if a contract claiming to be a lock doesn't
-        actually act as a lock, but bypasses the launchers of the network by using Underhanded Solidity
-        techniques, it could break the legitimacy of the initial distribution of the entire network.
-        Removing generalized locking removes the necessity for case-by-case decision-making by a launch-team,
-        and other edge case vulnerabilities.
+        By removing the ability to signal on behalf of a contract, Straightedge has solved for Generalized
+        Locks and other edge case vulnerabilities. However, it is still worth explicitly pointing out some
+        of the issues with the policy. First, it places undue burden upon the launchers of the network to
+        audit and decide on different generalized lock contracts, which may contain edge cases such as
+        bypassing locking by issuing derivatives of the locked Ether (such as with WETH). Further, if a
+        contract does not correctly lock, or if code claiming to be a lock bypasses detection through
+        underhanded Solidity techniques, it could break the legitimacy of the initial distribution of
+        the entire network. Removing generalized locking removes the necessity for case-by-case decision-making
+        by a launch-team, and other edge case vulnerabilities.
 
 
     - question: Were these faulty design decisions made in Edgeware to allow distribution to the victims of locked funds in the November 2017 Parity Multisig Exploit?
       answer: |
-        The Web3 Foundation, the largest victim of the Parity bug, has a very close relationship with the Edgeware project, and it is likely it 
-        is due to the influence of the Web3 Foundation that these odd design decisions were made in the construction of the
-        Edgeware lockdrop.  In order to recover their own lost funds, they likely pushed for design decisions that threaten
-        the legitmacy of the Edgeware project as a whole.
+        The Web3 Foundation, the largest victim of the Parity bug, has a very close relationship
+        with the Edgeware project, and it is likely it is due to the influence of the Web3 Foundation
+        that these odd design decisions were made in the construction of the Edgeware lockdrop. But in
+        trying to right a wrong by recovering funds, design decisions were made that could threaten
+        the legitimacy of the project as a whole.
+        
+        Let’s be clear: Like many in the community, we feel for groups like the Web3 Foundation,
+        and others affected by these attacks, but an open system of governance is one in which the
+        people have a say, while a system in which rules are changed to provide select parties with
+        powerful voting shares is not open. In the case of Edgeware, the potential for an open-future
+        was impeded prior to launch by late-stage changes to a token distribution model that aimed to
+        artificially provide favor to a small, select group of individuals and teams. The result would
+        provide a substantial voting-percentage of all network-tokens to a party or parties not in control
+        of the funds for which tokens are rewarded.
+        
+        Nonetheless, the Web3 Foundation's support in funding the development of Parity Substrate
+        (the framework upon which Straightedge is built) is undeniable. To that end, possible ways
+        of rewarding them would be to use Straightedge’s decentralized on-chain governance process
+        to award those with funds locked in the Parity multisig with the Straightedge tokens that
+        they would have earned, had a successful signal been possible. This would allow the Web3
+        Foundation to successfully execute on its goal of recovering value from their locked funds
+        in a way that protects the legitimacy of the project, and which puts the issue to governance
+        and ecosystem participants. Should such a proposal be rejected by governance, the receiver
+        of the 10% founder's reward can also optionally choose to share their cut with the Web3 Foundation
+        or Parity if they so see fit.
 
-        An open system of governance is one in which the people deserve a say, and a system in which
-        rules are changed to provide select parties with powerful voting shares is not open.
-        In the case of Edgeware, the potential for an open-future was extinguished prior to launch by
-        late-stage changes to a token distribution model that aimed to artificially provide favor to a
-        small, select group of individuals and teams through what was labeled a “generalized lock”.
-        This change alone provided an extremely high amount of all network-tokens to a party or parties not in control
-        of the funds for which tokens are rewarded. 
-
-        Nonetheless, because the Web3 Foundation's support in funding the development of Parity Substrate, the framework upon
-        which Straightedge is built, is undeniable, possible ways of rewarding them would be to use the on-chain governance process
-        of Straightedge to reward the locked funds from the Parity wallets with the equivalent amount of Straightedge they would have
-        earned if it has been a successful signal.  This will allow the Web3 Foundation to successfully execute on its goal of recovering
-        value from their locked funds, but doing so in a way that protects the legitimacy of the project by putting the issue to the 
-        governance of Straightedge tokenholders and ecosystem participants.  If such a proposal is rejected by governance,
-        the receiver of the 10% founder's reward can also optionally choose to share their cut with the Web3 Foundation or Parity if
-        they so see fit.
 
     - question: What is a zero-day fork?
       answer: |
