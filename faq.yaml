@@ -65,8 +65,7 @@ en:
 
     - question: Were these design decisions made in Edgeware to allow distribution to the victims of locked funds in the November 2017 Parity Multisig Exploit?
       answer: |
-        If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.  The Web3 Foundation,
-        the largest victim of the Parity bug, has a very close relationship with the Edgeware project, and it is likely it 
+        The Web3 Foundation, the largest victim of the Parity bug, has a very close relationship with the Edgeware project, and it is likely it 
         is due to the influence of the Web3 Foundation that these odd design decisions were made in the construction of the
         Edgeware lockdrop.  In order to recover their own lost funds, they likely pushed for design decisions that threaten
         the legitmacy of the Edgeware project as a whole.
@@ -84,12 +83,9 @@ en:
         of Straightedge to reward the locked funds from the Parity wallets with the equivalent amount of Straightedge they would have
         earned if it has been a successful signal.  This will allow the Web3 Foundation to successfully execute on its goal of recovering
         value from their locked funds, but doing so in a way that protects the legitimacy of the project by putting the issue to the 
-        governance of Straightedge tokenholders and ecosystem participants.
-
-        
-        
-        If rejected by governance, the receiver of the 10% founder's reward can also optionally
-        choose to share their cut with the Web3 Foundation or Parity if they so see fit.
+        governance of Straightedge tokenholders and ecosystem participants.  If such a proposal is rejected by governance,
+        the receiver of the 10% founder's reward can also optionally choose to share their cut with the Web3 Foundation or Parity if
+        they so see fit.
 
     - question: What is a zero-day fork?
       answer: |
