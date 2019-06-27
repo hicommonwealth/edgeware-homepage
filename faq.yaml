@@ -60,10 +60,12 @@ en:
         may contain edge cases such as bypassing locking by issuing derivatives of the locked Ether
         (such as with WETH).  Furthermore, if a contract claiming to be a lock doesn't
         actually act as a lock, but bypasses the launchers of the network by using Underhanded Solidity
-        techniques, it could break the legitmacy of the initial distribution of the entire network.
+        techniques, it could break the legitimacy of the initial distribution of the entire network.
+        Removing generalized locking removes the necessity for case-by-case decision-making by a launch-team,
+        and other edge case vulnerabilities.
 
 
-    - question: Were these design decisions made in Edgeware to allow distribution to the victims of locked funds in the November 2017 Parity Multisig Exploit?
+    - question: Were these faulty design decisions made in Edgeware to allow distribution to the victims of locked funds in the November 2017 Parity Multisig Exploit?
       answer: |
         The Web3 Foundation, the largest victim of the Parity bug, has a very close relationship with the Edgeware project, and it is likely it 
         is due to the influence of the Web3 Foundation that these odd design decisions were made in the construction of the
