@@ -3,15 +3,12 @@ en:
   items:
     - question: Is there an official whitepaper / manifesto for Straightedge?
       answer: |
-        It is in the works, and coming soon!
-        Straightedge is derived from the Edgeware project, and the original whitepaper
-        is linked here.
+        Straightedge is derived from the Edgeware project, and the original whitepaper is linked here.
 
         https://straighted.ge/edgeware-whitepaper
 
-        Further, an initial post that delves into the advancements made in Straightedge’s distribution,
-        governance and plans for future development will be available soon. 
-
+        Further, stay tuned for our launch post that delves into the advancements made
+        in Straightedge’s distribution, governance and plans for future development.
 
     - question: What's the inspiration of the fork?
       answer: |
