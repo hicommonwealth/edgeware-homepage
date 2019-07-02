@@ -100,6 +100,20 @@ en:
         be an interesting experiment in governance to see the results of what happens in a zero-day
         fork that launches two networks at the same time.
 
+    - question: How do I redeem my STR?
+      answer: |
+        It’s easy: All participants in the Edgeware lockdrop will receive STR to the same address and
+        using the same seed, all on the new chain. Signalers that participated from non-contract addresses
+        will receive STR in the genesis of the Straightedge chain as well, without a one-year wait. To
+        use your STR, simply install the Straightedge code which is located here:
+
+        https://github.com/sikkatech/straightedge-node/
+
+    - question: How are STR tokens distributed?
+      answer: |
+        Lockdrop and signal participants will receive 90% of STR tokens, with the exception of contributions
+        through signalling on behalf of a contract. The remaining 10% of distribution will be allocated as
+        a founders’ reward to entities contributing to the launch of the Straightedge project.
 
     - question: What if I want to learn more about the lockdrop or technical details?
       answer: |
