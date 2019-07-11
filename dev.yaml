@@ -22,7 +22,7 @@ en:
       answer: |
         Edgeware documentation is a work in progress, but you can find it here:
 
-        https://edgeware.gitbook.io/doc-edgewa-re/
+        https://github.com/hicommonwealth/edgeware-node/wiki
         
     - question: Is there a block explorer for Edgeware?
       answer: |
@@ -128,7 +128,7 @@ jp:
 
     - question: Edgeware Documentation (WIP)
       answer: |
-        https://edgeware.gitbook.io/doc-edgewa-re/
+        https://github.com/hicommonwealth/edgeware-node/wiki
 
     - question: Edgeware Telemetry
       answer: |
@@ -171,7 +171,7 @@ canto:
 
     - question: Edgeware Documentation (WIP)
       answer: |
-        https://edgeware.gitbook.io/doc-edgewa-re/
+        https://github.com/hicommonwealth/edgeware-node/wiki
 
     - question: Edgeware Telemetry
       answer: |
@@ -214,7 +214,7 @@ ko:
 
     - question: Edgeware Documentation (WIP)
       answer: |
-        https://edgeware.gitbook.io/doc-edgewa-re/
+        https://github.com/hicommonwealth/edgeware-node/wiki
 
     - question: Edgeware Telemetry
       answer: |
