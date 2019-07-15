@@ -1,42 +1,56 @@
 /*
  * FONTS
  */
-@font-face {
+ @font-face {
     font-family: 'ibm-plex-sans-webfont';
     font-weight: 400;
     font-style: normal;
-    src: url('./fonts/otf/IBMPlexSans-Regular.eot') format('embedded-opentype'),
-         url('./fonts/woff/IBMPlexSans-Regular.woff') format('woff'),
-         url('./fonts/woff2/IBMPlexSans-Regular.woff2') format('woff2'),
-         url('./fonts/ttf/IBMPlexSans-Regular.ttf') format('truetype');
-}
+    src: url(./fonts/woff/IBMPlexSans-Regular.woff) format("woff"), url(client/fonts/woff2/IBMPlexSans-Regular.woff2) format("woff2"), url(client/fonts/ttf/IBMPlexSans-Regular.ttf) format("truetype"); }
+  
 @font-face {
     font-family: 'ibm-plex-sans-webfont';
     font-weight: 400;
     font-style: italic;
-    src: url('./fonts/otf/IBMPlexSans-Italic.eot') format('embedded-opentype'),
-         url('./fonts/woff/IBMPlexSans-Italic.woff') format('woff'),
-         url('./fonts/woff2/IBMPlexSans-Italic.woff2') format('woff2'),
-         url('./fonts/ttf/IBMPlexSans-Italic.ttf') format('truetype');
-}
+    src: url(./fonts/woff/IBMPlexSans-Italic.woff) format("woff"), url(client/fonts/woff2/IBMPlexSans-Italic.woff2) format("woff2"), url(client/fonts/ttf/IBMPlexSans-Italic.ttf) format("truetype"); }
+
 @font-face {
     font-family: 'ibm-plex-sans-webfont';
     font-weight: 500;
     font-style: normal;
-    src: url('./fonts/otf/IBMPlexSans-Medium.eot') format('embedded-opentype'),
-         url('./fonts/woff/IBMPlexSans-Medium.woff') format('woff'),
-         url('./fonts/woff2/IBMPlexSans-Medium.woff2') format('woff2'),
-         url('./fonts/ttf/IBMPlexSans-Medium.ttf') format('truetype');
-}
+    src: url(./fonts/woff/IBMPlexSans-Medium.woff) format("woff"), url(client/fonts/woff2/IBMPlexSans-Medium.woff2) format("woff2"), url(client/fonts/ttf/IBMPlexSans-Medium.ttf) format("truetype"); }
+
 @font-face {
     font-family: 'ibm-plex-sans-webfont';
     font-weight: 500;
     font-style: italic;
-    src: url('./fonts/otf/IBMPlexSans-MediumItalic.eot') format('embedded-opentype'),
-         url('./fonts/woff/IBMPlexSans-MediumItalic.woff') format('woff'),
-         url('./fonts/woff2/IBMPlexSans-MediumItalic.woff2') format('woff2'),
-         url('./fonts/ttf/IBMPlexSans-MediumItalic.ttf') format('truetype');
+    src: url(./fonts/woff/IBMPlexSans-MediumItalic.woff) format("woff"), url(client/fonts/woff2/IBMPlexSans-MediumItalic.woff2) format("woff2"), url(client/fonts/ttf/IBMPlexSans-MediumItalic.ttf) format("truetype"); }  
+
+@font-face {
+    font-family: 'inconsolata';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./fonts/ttf/Inconsolata-Regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'inconsolata';
+    font-weight: 400;
+    font-style: bold;
+    src: url('./fonts/ttf/Inconsolata-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'courier10';
+    font-weight: 400;
+    font-style: normal;
+    src: url('./fonts/otf/Courier-10-Pitch-Regular.otf') format('embedded-opentype');
+}
+@font-face {
+    font-family: 'courier10';
+    font-weight: 400;
+    font-style: bold;
+    src: url('./fonts/otf/Courier-10-Pitch-Bold.ttf') format('embedded-opentype');
+}
+
 
 /*
  * GLOBALS
@@ -45,11 +59,15 @@
     box-sizing: border-box;
 }
 body {
-    font-size: 20px;
+    font-size: 17px;
     line-height: 1.45;
     font-weight: 400;
-    font-family: ibm-plex-sans-webfont, sans-serif;
-    color: #222;
+    font-family: courier10, monospace;
+    color: #fff;
+    background: #282828;
+}
+h1 {
+    font-family: ibm-plex-sans-webfont;
 }
 h1, h2, h3, h4 {
     line-height: 1.15;
@@ -67,7 +85,7 @@ p {
     margin-bottom: 1em;
 }
 a {
-    color: #111;
+    color: #fff;
 }
 .button-text {
     display: inline-block;
@@ -98,7 +116,7 @@ a.btn {
 a.btn,
 button,
 input[type="submit"] {
-    background: #e4457e;
+    background: #8b0000;
     border: none;
     outline: none;
     box-shadow: none;
@@ -164,7 +182,7 @@ a.overlay-close {
  * LAYOUT
  */
 .banner {
-    background: #3ead58;
+    background: #8b0000;
     color: #fff;
     padding: 18px 0 18px;
     font-size: 18px;
@@ -185,7 +203,7 @@ a.overlay-close {
     background: #f4f4f4;
 }
 .wrapper.dark-background {
-    background: #282828;
+    background: #222;
 }
 
 .row {
@@ -227,6 +245,10 @@ a.overlay-close {
     clear: both;
 }
 
+.vertical-center {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
 
 /*
  * SECTIONS
@@ -247,7 +269,7 @@ a.overlay-close {
 }
 .section.heading .logo {
     float: left;
-    background-image: url('/images/logo.png');
+    background-image: url('/images/logo_inverse.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -377,10 +399,10 @@ a.overlay-close {
 }
 .section.summary a.action {
     text-decoration: none;
-    font-size: 90%;
+    /* font-size: 90%; */
     font-weight: 500;
     text-transform: uppercase;
-    color: #e4457e;
+    color: #b00000;
 }
 .section.summary a.action.disabled {
     opacity: 0.5;
@@ -390,9 +412,9 @@ a.overlay-close {
     position: relative;
     top: 4px;
     margin-left: 4px;
-    stroke: #e4457e;
+    stroke: #b00000;
     stroke-width: 0.5px;
-    fill: #e4457e;
+    fill: #b00000;
 }
 .section.summary a.action:hover {
     text-decoration: underline;
@@ -472,6 +494,7 @@ a.overlay-close {
 .section.faq .items {
     column-count: 2;
     column-gap: 70px;
+    font-family: ibm-plex-sans-webfont;
 }
 .section.press .item,
 .section.dev .item,
@@ -487,7 +510,7 @@ a.overlay-close {
     float: left;
     margin: 0;
     margin-bottom: 20px;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 500;
     line-height: 1.5;
 }
@@ -516,7 +539,7 @@ a.overlay-close {
 
 /* team */
 .section.team {
-    background: #f4f4f4;
+    background: #222;
     font-size: 0.8em;
     padding: 30px 70px 50px;
     margin-top: 45px;
@@ -554,8 +577,9 @@ a.overlay-close {
     background-size: cover;
 }
 .section.team .team-container .team-person .name {
-    font-weight: 500;
+    /* font-weight: 500; */
     margin-bottom: 7px;
+    font-weight: bold;
 }
 .section.team .team-container .team-person .bio {
 }
