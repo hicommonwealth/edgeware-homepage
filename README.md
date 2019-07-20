@@ -1,16 +1,14 @@
-## Straightedge: An ethical self-improving smart contract blockchain
+## Straightedge: A self-improving smart contract blockchain with alternative genesis token distribution
 
 Straightedge is a WASM-based smart contract platform built on [Parity Substrate](https://github.com/paritytech/substrate).
-It is a 0-day fork
-of the [Edgeware](https://edgewa.re/) blockchain built by
+It is a 0-day fork of the [Edgeware](https://edgewa.re/) blockchain built by
 [Commonwealth Labs](https://commonwealth.im/).  The Straightedge blockchain
-is being built because we believe in the vision of Edgeware but believe that
-the initial distribution mechanisms of the EDGE tokens contains too many edge
-cases, that decreases the legitimacy of the entire project.
+is being built because we believe in the vision of Edgeware but believe in trying to
+improve on the original token distribution.
 
 For this reason, we are planning to launch Straightedge on the 15th of September,
 concurrently with the launch of Edgeware, as a 0 day fork, with the same feature set,
-but just a slightly changed initital distribution.
+but with an alternative initial distribution.
 
 The primary changes we propose are:
 1) Contract deployers cannot signal on behalf of contracts.
