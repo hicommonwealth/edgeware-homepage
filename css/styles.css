@@ -269,7 +269,7 @@ a.overlay-close {
 }
 .section.heading .logo {
     float: left;
-    background-image: url('/images/logo_inverse.png');
+    background-image: url('images/logo_inverse.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
