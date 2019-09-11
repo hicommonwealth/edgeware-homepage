@@ -3,30 +3,30 @@ en:
 - Web3 Foundation Research: https://research.web3.foundation/en/latest/
 - section: Developer Resources
   items:
-    - question: How do I write smart contracts on Edgeware?
+    - question: Write Smart Contracts on Edgeware using Ink!
       answer: |
         There is an interactive tutorial that guides you through
         writing two basic smart contracts here:
 
         http://tiny.cc/ink-workshop
 
-    - question: How do I acquire some testnet EDG?
+    - question: Acquire Testnet Edge
       answer: |
         https://faucets.blockxlabs.com/
 
-    - question: How do I run an Edgeware node?
+    - question: Run an Edgeware Node
       answer: |
         Clone and follow the instructions in this repository:
 
         https://github.com/hicommonwealth/edgeware-node
 
-    - question: How do I develop new modules for Edgeware?
+    - question: Edgeware Module Development
       answer: |
         Edgeware documentation is a work in progress, but you can find it here:
 
         https://github.com/hicommonwealth/edgeware-node/wiki
         
-    - question: Is there a block explorer for Edgeware?
+    - question: Edgeware Block Explorer
       answer: |
         You can explore Edgeware networks, including the current testnet at Polkascan:
 
@@ -40,7 +40,7 @@ en:
 
         https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
 
-    - question: What is Substrate?
+    - question: Substrate: The Wordpress of Blockchain 
       answer: |
 
         Substrate is the underlying technology that Edgeware is built
@@ -59,7 +59,7 @@ en:
 
         https://riot.im/app/#/room/#substrate-technical:matrix.org
 
-    - question: What is Polkadot?
+    - question: Polkadot: Interoperability, shared security blockchain network.
       answer: |
 
         Polkadot is an blockchain interoperability protocol, which
@@ -69,6 +69,8 @@ en:
         information:
 
         https://wiki.polkadot.network/en/latest/
+        
+        https://research.web3.foundation/en/latest/
 
         https://github.com/w3f/polkadot-wiki/
 
