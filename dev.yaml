@@ -1,4 +1,6 @@
 en:
+- Polkadot Wiki: https://wiki.polkadot.network/en/latest/
+- Web3 Foundation Research: https://research.web3.foundation/en/latest/
 - section: Developer Resources
   items:
     - question: How do I write smart contracts on Edgeware?
