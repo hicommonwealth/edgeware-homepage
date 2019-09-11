@@ -1,6 +1,4 @@
 en:
-- Polkadot Wiki: https://wiki.polkadot.network/en/latest/
-- Web3 Foundation Research: https://research.web3.foundation/en/latest/
 - section: Developer Resources
   items:
     - question: Write Smart Contracts on Edgeware using Ink!
