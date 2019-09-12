@@ -37,8 +37,8 @@ en:
         nodes, and more:
 
         https://telemetry.polkadot.io/#/Edgeware Testnet V0.2.0
+    - question: Substrate - The Wordpress of Blockchain 
 
-    - question: Substrate: The Wordpress of Blockchain 
       answer: |
 
         Substrate is the underlying technology that Edgeware is built
@@ -57,7 +57,7 @@ en:
 
         https://riot.im/app/#/room/#substrate-technical:matrix.org
 
-    - question: Polkadot: Interoperability, shared security blockchain network.
+    - question: Polkadot - Interoperability, shared security blockchain network.
       answer: |
 
         Polkadot is an blockchain interoperability protocol, which
@@ -198,9 +198,11 @@ canto:
     - question: What is Polkadot?
       answer: |
         More info below:
-            https://wiki.polkadot.network/en/latest/
-        Here's an overview:
-            https://github.com/w3f/polkadot-wiki/
+        https://wiki.polkadot.network/en/latest/
+        
+        https://research.web3.foundation/en/latest/
+
+        https://github.com/w3f/polkadot-wiki/
 
 ## Korean
 ko:
