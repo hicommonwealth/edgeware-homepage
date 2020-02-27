@@ -450,6 +450,7 @@ code {
   margin-top: 30px; }
 
 input.ss58-address,
+input.pk-address,
 input[type="text"],
 input[type="email"] {
   height: 42px;
@@ -460,6 +461,7 @@ input[type="email"] {
   padding-left: 14px; }
 
 input.ss58-address:not([readonly]):focus,
+input.pk-address:not([readonly]):focus,
 input[type="text"]:not([readonly]):focus,
 input[type="email"]:not([readonly]):focus {
   border-color: #08c; }
@@ -532,6 +534,7 @@ input[type="submit"]:active {
   margin: 40px auto 80px; }
 
 input.ss58-address,
+input.pk-address,
 input[type="text"] {
   width: 100%;
   margin: 6px 0; }
