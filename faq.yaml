@@ -1,23 +1,24 @@
 en:
-- section: FAQ
+- section: Distribution FAQ
   items:
-    - question: Is there an official whitepaper / manifesto for Straightedge?
+
+    - question: How do I get genesis STR tokens?
       answer: |
-        Straightedge is derived from the Edgeware project, and the original whitepaper is linked here.
+        90% of genesis STR tokens will be distributed automatically to anyone who participated in the 
+        [Edgeware lockdrop](https://edgewa.re/faq/) by locking ETH or signalling from an 
+        Ethereum EOA.  The remaining 10% of tokens will be placed in the community pool, which governance
+        can use to allocate as a founders’ reward to entities contributing to the launch of the Straightedge project.
 
-        https://straighted.ge/edgeware-whitepaper
-
-        Further, stay tuned for our launch post that delves into the advancements made
-        in Straightedge’s distribution, governance and plans for future development.
-
-        Also, join our public telegram community here:
-
-        https://t.me/HeyStraightedge
-
-    - question: What's the inspiration of the fork?
+    - question: How do I redeem my STR?
       answer: |
-        Edgeware is an exciting new project, and will be one of the first chains launched on Parity’s 
-        Substrate platform. While we applaud the testing of a novel form of distribution, (the lockdrop),
+        It’s easy: All genesis token holders will be able to claim STR using the same mnemonic as the key
+        they generated for the Edgeware lockdrop. To claim your tokens, follow the instructions here:
+
+        https://github.com/heystraightedge/straightedge#importing-lockdrop-keys
+
+    - question: What are the changes from the Edgeware distribution?
+      answer: |
+        Edgeware is an exciting new project with a novel distribution model (the lockdrop). However,  
         the design of signalling in the Edgeware lockdrop leads to many edge conditions that delegitimize
         the lockdrop and centralizes the initial distribution. To ensure a balanced token model that is
         both legitimate and inclusive of both lockdrop and signal participants, a number of distribution
@@ -93,37 +94,5 @@ en:
         of the 10% founder's reward can also optionally choose to share their cut with the Web3 Foundation
         or Parity if they so see fit.
 
-
-    - question: What is a zero-day fork?
-      answer: |
-        A zero-day fork is a novel type of fork in which two alternative implementations of a project
-        are launched at the exact same time, on a brand new network. Both Straightedge and Edgeware
-        are slated for launch on September 15, 2019. Thus far, in major network forks, we've seen both
-        the incumbent network gain market superiority (in the case of Bitcoin and Bitcoin Cash) and
-        the challenger network gain superiority (in the case of Ethereum Classic and Ethereum). It will
-        be an interesting experiment in governance to see the results of what happens in a zero-day
-        fork that launches two networks at the same time.
-
-    - question: How do I redeem my STR?
-      answer: |
-        It’s easy: All participants in the Edgeware lockdrop will receive STR to the same address and
-        using the same seed, all on the new chain. Signalers that participated from non-contract addresses
-        will receive STR in the genesis of the Straightedge chain as well, without a one-year wait. To
-        use your STR, simply install the Straightedge code which is located here:
-
-        https://github.com/sikkatech/straightedge-node/
-
-    - question: How are STR tokens distributed?
-      answer: |
-        Lockdrop and signal participants will receive 90% of STR tokens, with the exception of contributions
-        through signalling on behalf of a contract. The remaining 10% of distribution will be allocated as
-        a founders’ reward to entities contributing to the launch of the Straightedge project.
-
-    - question: What if I want to learn more about the lockdrop or technical details?
-      answer: |
-        Please review the Edgeware FAQs where you can learn more about the lockdrop contracts,
-        the Straightedge software, and incentives for validation.
-        
-        https://edgewa.re/faq/
 
     
