@@ -1,3 +1,9 @@
+# this repo has been deprecated, and you can view the new site and repo at http://github.com/edgeware-network
+
+
+
+
+
 ## Edgeware: A self-improving smart contract blockchain
 
 Edgeware is a WASM-based smart contract platform. Participants in the
